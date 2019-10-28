@@ -38,6 +38,8 @@ dependencies {
     compile 'javax.servlet:javax.servlet-api:3.1.0'
     compile group: 'org.mybatis', name: 'mybatis-guice', version: '3.7'
     compile group: 'mysql', name: 'mysql-connector-java', version: '8.0.15'
+    compile group: 'org.springframework.security', name: 'spring-security-oauth2-client', version: '5.1.6.RELEASE'
+
 
     compile group: 'commons-io', name: 'commons-io', version: '2.4'
     compile group: 'commons-net', name: 'commons-net', version: '3.6'
