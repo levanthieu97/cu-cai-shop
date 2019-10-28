@@ -9,12 +9,12 @@ import java.util.Date;
 @Data
 @NoArgsConstructor
 public class Promotions extends GeneralInfo {
-    private String promotion_id;
-    private String promotion_name;
-    private String promotion_content;
+    private String promotionId;
+    private String promotionName;
+    private String promotionContent;
     private int percent;
-    private Date from_date;
-    private Date to_date;
+    private Date fromDate;
+    private Date toDate;
     private String status;
     private String type;
 }

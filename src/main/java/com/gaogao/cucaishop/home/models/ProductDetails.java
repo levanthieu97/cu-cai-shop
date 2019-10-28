@@ -6,8 +6,8 @@ import lombok.NoArgsConstructor;
 
 @Data
 @NoArgsConstructor
-public class Product_details extends GeneralInfo {
-    private String product_details_id;
+public class ProductDetails extends GeneralInfo {
+    private String productDetailsId;
     private String color;
     private String size;
     private int price;

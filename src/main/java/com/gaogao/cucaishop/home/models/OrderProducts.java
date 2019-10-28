@@ -6,9 +6,10 @@ import lombok.NoArgsConstructor;
 
 @Data
 @NoArgsConstructor
-public class Product_promotions extends GeneralInfo {
-    private String promotion_id;
-    private String product_id;
-    private String product_detail_id;
+public class OrderProducts extends GeneralInfo {
+    private String orderId;
+    private String productId;
+    private String productDetailId;
+    private String payment;
     private String status;
 }

@@ -9,9 +9,9 @@ import java.util.Date;
 @Data
 @NoArgsConstructor
 public class Notifications extends GeneralInfo {
-    private String notification_id;
-    private String notification_name;
-    private String notification_content;
-    private Date end_date;
+    private String notificationId;
+    private String notificationName;
+    private String notificationContent;
+    private Date endDate;
     private String type;
 }

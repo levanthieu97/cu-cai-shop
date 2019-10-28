@@ -7,6 +7,6 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 public class Orders extends GeneralInfo {
-    private String user_id;
-    private String order_id;
+    private String userId;
+    private String orderId;
 }

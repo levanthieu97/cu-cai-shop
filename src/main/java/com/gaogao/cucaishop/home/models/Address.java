@@ -7,16 +7,16 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 public class Address extends GeneralInfo {
-    private String address_id;
-    private String user_id;
-    private String street_name;
-    private String ward_id;
-    private String ward_name;
-    private String district_id;
-    private String district_name;
-    private String city_id;
-    private String city_name;
-    private String country_id;
-    private String country_name;
+    private String addressId;
+    private String userId;
+    private String streetName;
+    private String wardId;
+    private String wardName;
+    private String districtId;
+    private String districtName;
+    private String cityId;
+    private String cityName;
+    private String countryId;
+    private String countryName;
     private String type;
 }

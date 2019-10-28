@@ -6,7 +6,7 @@ import lombok.NoArgsConstructor;
 
 @Data
 @NoArgsConstructor
-public class Product_detail_images extends GeneralInfo {
-    private String product_detail_id;
-    private String status;
+public class RoleUsers extends GeneralInfo {
+    private String roleId;
+    private String userId;
 }

@@ -7,9 +7,9 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 public class Images extends GeneralInfo {
-    private String image_id;
-    private String user_id;
-    private String image_content;
+    private String imageId;
+    private String userId;
+    private String imageContent;
     private String status;
     private String type;
 }

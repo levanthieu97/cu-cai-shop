@@ -7,10 +7,10 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 public class Shops extends GeneralInfo {
-    private String shop_id;
-    private String user_id;
-    private String shop_name;
-    private String address_id;
+    private String shopId;
+    private String userId;
+    private String shopName;
+    private String addressId;
     private String email;
     private String phone;
     private String website;

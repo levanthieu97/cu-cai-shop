@@ -6,7 +6,7 @@ import lombok.NoArgsConstructor;
 
 @Data
 @NoArgsConstructor
-public class User_notifications extends GeneralInfo {
-    private String notification_id;
-    private String user_id;
+public class UserNotifications extends GeneralInfo {
+    private String notificationId;
+    private String userId;
 }

@@ -7,10 +7,10 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 public class Questions extends GeneralInfo {
-    private String question_id;
-    private String user_id;
-    private String product_id;
-    private String question_content;
-    private String answer_content;
+    private String questionId;
+    private String userId;
+    private String productId;
+    private String questionContent;
+    private String answerContent;
     private String type;
 }

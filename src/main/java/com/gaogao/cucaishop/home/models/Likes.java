@@ -7,9 +7,9 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 public class Likes extends GeneralInfo {
-    private String like_id;
-    private String user_id_from;
-    private String user_id_to;
-    private String product_id;
+    private String likeId;
+    private String userIdFrom;
+    private String userIdTo;
+    private String productId;
     private String type;
 }

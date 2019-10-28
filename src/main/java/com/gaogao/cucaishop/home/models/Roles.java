@@ -7,7 +7,6 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 public class Roles extends GeneralInfo {
-    private String role_id;
-    private String role_name;
-    private String role_description;
+    private String roleId;
+    private RoleName roleName;
 }

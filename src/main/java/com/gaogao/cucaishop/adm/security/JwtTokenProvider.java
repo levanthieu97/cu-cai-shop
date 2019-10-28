@@ -23,7 +23,7 @@ public class JwtTokenProvider {
     public String generateToken(JwtUser jwtUser){
         Date expireDate  = new DateTime().plusHours(jwtExpireHrs).toDate();
         return Jwts.builder()
-                .setId(Integer.toString(jwtUser.getUserId()))
+                .setId(jwtUser.getUserId())
                 .setSubject(jwtUser.getUsername())
                 .claim("email",jwtUser.getEmail())
                 .claim("phone",jwtUser.getPhone())
