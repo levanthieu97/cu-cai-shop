@@ -1,15 +1,14 @@
 package com.gaogao.cucaishop.home.models;
 
-import com.gaogao.cucaishop.common.models.generalInfo;
+import com.gaogao.cucaishop.common.models.GeneralInfo;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
 @NoArgsConstructor
-public class order_products extends generalInfo {
-    private String order_id;
+public class Product_promotions extends GeneralInfo {
+    private String promotion_id;
     private String product_id;
     private String product_detail_id;
-    private String payment;
     private String status;
 }

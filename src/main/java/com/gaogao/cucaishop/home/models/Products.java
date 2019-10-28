@@ -1,12 +1,12 @@
 package com.gaogao.cucaishop.home.models;
 
-import com.gaogao.cucaishop.common.models.generalInfo;
+import com.gaogao.cucaishop.common.models.GeneralInfo;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
 @NoArgsConstructor
-public class products extends generalInfo {
+public class Products extends GeneralInfo {
     private String product_id;
     private String shop_id;
     private String product_name;
