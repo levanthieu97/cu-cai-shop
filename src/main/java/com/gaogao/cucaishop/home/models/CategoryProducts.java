@@ -7,6 +7,6 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 public class CategoryProducts extends GeneralInfo {
-    private String category_id;
-    private String product_id;
+    private String categoryIid;
+    private String productIid;
 }
