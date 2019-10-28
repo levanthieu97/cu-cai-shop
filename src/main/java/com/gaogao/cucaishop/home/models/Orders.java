@@ -1,12 +1,12 @@
 package com.gaogao.cucaishop.home.models;
 
-import com.gaogao.cucaishop.common.models.generalInfo;
+import com.gaogao.cucaishop.common.models.GeneralInfo;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
 @NoArgsConstructor
-public class role_users extends generalInfo {
-    private String role_id;
+public class Orders extends GeneralInfo {
     private String user_id;
+    private String order_id;
 }
