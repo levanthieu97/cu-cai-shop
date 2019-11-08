@@ -1,7 +1,7 @@
 buildscript {
     ext {
         appVersion = '1.1'
-        springBootVersion = '2.0.0.RELEASE'
+        springBootVersion = '2.1.0.RELEASE'
     }
     repositories {
         mavenCentral()
@@ -44,10 +44,18 @@ dependencies {
     compile group: 'mysql', name: 'mysql-connector-java', version: '8.0.15'
     compile group: 'org.springframework.security', name: 'spring-security-oauth2-client', version: '5.1.6.RELEASE'
 
+    implementation 'org.springframework.boot:spring-boot-configuration-processor'
 
     compile group: 'commons-io', name: 'commons-io', version: '2.4'
     compile group: 'commons-net', name: 'commons-net', version: '3.6'
     compile group: 'commons-validator', name: 'commons-validator', version: '1.6'
+
+    // Social
+    // https://mvnrepository.com/artifact/org.springframework.social/spring-social-facebook
+    compile group: 'org.springframework.social', name: 'spring-social-facebook', version: '2.0.3.RELEASE'
+    // https://mvnrepository.com/artifact/org.springframework.social/spring-social-google
+    compile group: 'org.springframework.social', name: 'spring-social-google', version: '1.0.0.RELEASE'
+
 
     compileOnly 'org.projectlombok:lombok:1.18.8'
     annotationProcessor 'org.projectlombok:lombok:1.18.8'
