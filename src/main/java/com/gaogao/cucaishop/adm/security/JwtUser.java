@@ -1,6 +1,6 @@
 package com.gaogao.cucaishop.adm.security;
 
-import com.gaogao.cucaishop.adm.models.Users;
+import com.gaogao.cucaishop.home.models.Users;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.security.core.GrantedAuthority;
@@ -15,7 +15,7 @@ import java.util.stream.Collectors;
 @NoArgsConstructor
 public class JwtUser implements UserDetails {
 
-    private int userId;
+    private String userId;
 
     private String username;
 
@@ -27,7 +27,7 @@ public class JwtUser implements UserDetails {
 
     private Collection<? extends GrantedAuthority> authorities;
 
-    public JwtUser(int userId, String username, String password, String email, String phone, Collection<? extends GrantedAuthority> authorities) {
+    public JwtUser(String userId, String username, String password, String email, String phone, Collection<? extends GrantedAuthority> authorities) {
         this.userId = userId;
         this.username = username;
         this.password = password;
@@ -41,7 +41,7 @@ public class JwtUser implements UserDetails {
                 new SimpleGrantedAuthority(role.getRoleName().name())).collect(Collectors.toList());
         return new JwtUser(
                 users.getUserId(),
-                users.getUsername(),
+                users.getUserName(),
                 users.getPassword(),
                 users.getEmail(),
                 users.getPhone(),

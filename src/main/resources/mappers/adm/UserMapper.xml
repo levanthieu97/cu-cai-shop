@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.gaogao.cucaishop.adm.mappers.UserMapper">
+
+    <resultMap id="userResultMap" type="com.gaogao.cucaishop.home.models.Users">
+        <id column="user_id" property="userId"/>
+        <result column="user_name" property="userName"/>
+        <result column="password" property="password"/>
+        <result column="full_name" property="fullName"/>
+        <result column="gender" property="gender"/>
+        <result column="phone" property="phone"/>
+        <result column="have_shop" property="haveShop"/>
+        <result column="is_active" property="isActive"/>
+        <result column="create_date" property="createDate"/>
+        <result column="update_date" property="updateDate"/>
+        <result column="image_url" property="imageUrl"/>
+        <result column="provider_id" property="providerId"/>
+        <collection property="roles" ofType="com.gaogao.cucaishop.home.models.Roles">
+            <id column="role_id" property="roleId"/>
+            <result column="role_name" property="roleName"/>
+        </collection>
+    </resultMap>
+
+    <select id="findByUserName" resultMap="userResultMap" parameterType="string">
+        select usr.user_id,usr.user_name,usr.password,usr.full_name
+        from users usr,roles rol
+        where usr.role_id = rol.role_id and usr.username = #{username}
+    </select>
+    
+    <insert id="registerNewUser" useGeneratedKeys="true">
+        
+    </insert>
+    
+    <update id="updateExistingUser" parameterType="map">
+
+    </update>
+
+
+</mapper>
