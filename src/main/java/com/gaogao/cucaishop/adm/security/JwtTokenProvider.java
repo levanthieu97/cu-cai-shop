@@ -31,7 +31,7 @@ public class JwtTokenProvider {
 
         JwtUser jwtUser = (JwtUser) authentication.getPrincipal();
         return Jwts.builder()
-                .setId(Integer.toString(jwtUser.getUserId()))
+                .setId(jwtUser.getUserId())
                 .setSubject(jwtUser.getUsername())
                 .claim("email", jwtUser.getEmail())
                 .claim("phone", jwtUser.getPhone())
