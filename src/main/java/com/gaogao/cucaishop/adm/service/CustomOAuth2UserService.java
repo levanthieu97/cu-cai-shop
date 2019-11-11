@@ -30,6 +30,7 @@ public class CustomOAuth2UserService extends DefaultOAuth2UserService {
         Users users = new Users();
 
         users.setProvider(AuthProvider.valueOf(oAuth2UserRequest.getClientRegistration().getRegistrationId()));
+        users.setUserName(oAuth2UserInfo.getUserName());
         users.setProviderId(oAuth2UserInfo.getId());
         users.setFullName(oAuth2UserInfo.getName());
         users.setEmail(oAuth2UserInfo.getEmail());
@@ -66,11 +67,11 @@ public class CustomOAuth2UserService extends DefaultOAuth2UserService {
 
     private OAuth2User processOAuth2User(OAuth2UserRequest oAuth2UserRequest, OAuth2User oAuth2User){
         OAuth2UserInfo oAuth2UserInfo = OAuth2UserInfoFactory.getOAuth2UserInfo(oAuth2UserRequest.getClientRegistration().getRegistrationId(),oAuth2User.getAttributes());
-        if(StringUtils.isEmpty(oAuth2UserInfo.getEmail())){
-            throw new OAuth2AuthenticationProcessingException("Email not found from OAuth2 provider");
+        if(StringUtils.isEmpty(oAuth2UserInfo.getUserName())){
+            throw new OAuth2AuthenticationProcessingException("Username not found from OAuth2 provider");
         }
 
-        Optional<Users> usersOptional = userMapper.findByUserName(oAuth2UserInfo.getEmail());
+        Optional<Users> usersOptional = userMapper.findByUserName(oAuth2UserInfo.getUserName());
 
         Users users;
         if(usersOptional.isPresent()){
