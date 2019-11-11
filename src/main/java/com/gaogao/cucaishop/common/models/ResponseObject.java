@@ -1,5 +1,7 @@
 package com.gaogao.cucaishop.common.models;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import java.io.Serializable;
 
 public class ResponseObject<T> implements Serializable {
@@ -7,10 +9,13 @@ public class ResponseObject<T> implements Serializable {
     public static final ResponseObject FAILURE = new ResponseObject(Boolean.FALSE, CommonStrings.RESP_MSG_SERVER_ERROR);
     public static final ResponseObject NOT_FOUND = new ResponseObject(Boolean.FALSE, CommonStrings.RESP_MSG_NOT_FOUND);
 
+    @JsonProperty("success")
     private boolean success;
 
+    @JsonProperty("message")
     private String message;
 
+    @JsonProperty("data")
     private T data;
 
     public ResponseObject() {
@@ -64,6 +69,9 @@ public class ResponseObject<T> implements Serializable {
         }
     }
 
+    // In past releases, a method that took an arbitrary number of values required you to create an array
+    // and put the values into the array prior to invoking the method
+    // https://www.programiz.com/java-programming/varargs
     public void setFailMessage(String format, String... params) {
         this.success = false;
         if (params != null && params.length > 0) {

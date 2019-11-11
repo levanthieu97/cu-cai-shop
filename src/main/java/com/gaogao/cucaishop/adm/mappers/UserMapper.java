@@ -14,7 +14,7 @@ public interface UserMapper {
 
     Users registerNewUser(Users users);
 
-    Users checkUser(@Param("username") String username);
+//    Users checkUser(@Param("username") String username);
 
     Users updateExistingUser(Users users);
 }

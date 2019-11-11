@@ -10,7 +10,7 @@ public class FacebookOAuth2UserInfo extends OAuth2UserInfo {
     }
 
     @Override
-    public String userName() {
+    public String getUserName() {
         return (String) attributes.get("email");
     }
 

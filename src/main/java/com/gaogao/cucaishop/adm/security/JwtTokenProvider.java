@@ -5,7 +5,6 @@ import io.jsonwebtoken.*;
 import org.joda.time.DateTime;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.crypto.bcrypt.BCrypt;
 import org.springframework.stereotype.Component;
@@ -15,10 +14,6 @@ import java.util.Date;
 @Component
 public class JwtTokenProvider {
     private static final Logger LOGGER = LoggerFactory.getLogger(JwtTokenProvider.class);
-//    private static final String jwtSecret = new BigInteger(130,new SecureRandom()).toString(32);
-
-    @Value("${jwt.expire.hours}")
-    private int jwtExpireHrs;
 
     private AppProperties appProperties;
 
@@ -27,8 +22,7 @@ public class JwtTokenProvider {
     }
 
     public String generateToken(Authentication authentication) {
-        Date expireDate = new DateTime().plusHours(jwtExpireHrs).toDate();
-
+        Date expireDate = new DateTime().plus(appProperties.getAuth().getTokenExpiration()).toDate();
         JwtUser jwtUser = (JwtUser) authentication.getPrincipal();
         return Jwts.builder()
                 .setId(jwtUser.getUserId())

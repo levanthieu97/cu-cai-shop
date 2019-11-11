@@ -6,14 +6,16 @@ import lombok.NoArgsConstructor;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.oauth2.core.user.OAuth2User;
 
 import java.util.Collection;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 
 @Data
 @NoArgsConstructor
-public class JwtUser implements UserDetails {
+public class JwtUser implements OAuth2User,UserDetails{
 
     private String userId;
 
@@ -23,9 +25,13 @@ public class JwtUser implements UserDetails {
 
     private String email;
 
+    private String fullname;
+
     private String phone;
 
     private Collection<? extends GrantedAuthority> authorities;
+
+    private Map<String, Object> attributes;
 
     public JwtUser(String userId, String username, String password, String email, String phone, Collection<? extends GrantedAuthority> authorities) {
         this.userId = userId;
@@ -49,38 +55,54 @@ public class JwtUser implements UserDetails {
         );
     }
 
+    public static JwtUser create(Users users, Map<String, Object> attributes){
+        JwtUser jwtUser = JwtUser.create(users);
+        jwtUser.setAttributes(attributes);
+        return jwtUser;
+    }
+
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        return null;
+        return authorities;
+    }
+
+    @Override
+    public Map<String, Object> getAttributes() {
+        return attributes;
     }
 
     @Override
     public String getPassword() {
-        return null;
+        return password;
     }
 
     @Override
     public String getUsername() {
-        return null;
+        return username;
     }
 
     @Override
     public boolean isAccountNonExpired() {
-        return false;
+        return true;
     }
 
     @Override
     public boolean isAccountNonLocked() {
-        return false;
+        return true;
     }
 
     @Override
     public boolean isCredentialsNonExpired() {
-        return false;
+        return true;
     }
 
     @Override
     public boolean isEnabled() {
-        return false;
+        return true;
+    }
+
+    @Override
+    public String getName() {
+        return fullname;
     }
 }
