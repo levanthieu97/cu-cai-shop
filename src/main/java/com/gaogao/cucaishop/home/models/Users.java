@@ -16,7 +16,8 @@ public class Users extends GeneralInfo {
     private String userId;
     private String userName;
     private String password;
-    private String fullName;
+    private String firstName;
+    private String lastName;
     private int gender;
     private String email;
     private String phone;

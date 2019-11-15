@@ -35,7 +35,7 @@ dependencies {
     compile group: 'io.jsonwebtoken', name: 'jjwt', version: '0.7.0'
     compile group: 'org.springframework.boot', name: 'spring-boot-starter-security'
 
-    compile 'javax.servlet:javax.servlet-api:3.1.0'
+    compile 'javax.servlet:javax.servlet-api:4.1.0'
     compile group: 'org.mybatis', name: 'mybatis-guice', version: '3.7'
     compile group: 'mysql', name: 'mysql-connector-java', version: '8.0.15'
     compile group: 'org.springframework.security', name: 'spring-security-oauth2-client', version: '5.1.6.RELEASE'
