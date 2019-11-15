@@ -1,22 +1,982 @@
-"2019-11-11 17:24:01 [main] INFO  c.g.cucaishop.CuCaiShopApplication - Starting CuCaiShopApplication on DLAP-0042 with PID 1276 (E:\Mirae\cu-cai-shop\out\production\classes started by Administrator in E:\Mirae\cu-cai-shop)
-""2019-11-11 17:24:01 [main] INFO  c.g.cucaishop.CuCaiShopApplication - No active profile set, falling back to default profiles: default
-""2019-11-11 17:24:03 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8088 (http)
-""2019-11-11 17:24:03 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
-""2019-11-11 17:24:03 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/9.0.12
-""2019-11-11 17:24:03 [main] INFO  o.a.c.core.AprLifecycleListener - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk1.8.0_211\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files\TortoiseSVN\bin;C:\Program Files\Java\jdk1.8.0_211\bin;C:\Program Files\Java\jre1.8.0_211\bin;C:\Program Files\nodejs\;C:\Program Files (x86)\Yarn\bin\;C:\Program Files\Git\cmd;C:\Users\Administrator\AppData\Local\Yarn\bin;;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\Administrator\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\Administrator\AppData\Local\Microsoft\WindowsApps;;.]
-""2019-11-11 17:24:03 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-""2019-11-11 17:24:03 [main] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1808 ms
-""2019-11-11 17:24:03 [main] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
-""2019-11-11 17:24:03 [main] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
-""2019-11-11 17:24:03 [main] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'formContentFilter' to: [/*]
-""2019-11-11 17:24:03 [main] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
-""2019-11-11 17:24:03 [main] INFO  o.s.b.w.s.DelegatingFilterProxyRegistrationBean - Mapping filter: 'springSecurityFilterChain' to: [/*]
-""2019-11-11 17:24:03 [main] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'jwtAuthenticationFilter' to: [/*]
-""2019-11-11 17:24:03 [main] INFO  o.s.b.w.s.ServletRegistrationBean - Servlet dispatcherServlet mapped to [/]
-""2019-11-11 17:24:04 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@315c081, org.springframework.security.web.context.SecurityContextPersistenceFilter@21ae657b, org.springframework.security.web.header.HeaderWriterFilter@5fcd1f0a, org.springframework.web.filter.CorsFilter@6b2dd3df, org.springframework.security.web.authentication.logout.LogoutFilter@3aed69dd, org.springframework.security.oauth2.client.web.OAuth2AuthorizationRequestRedirectFilter@59c500f7, org.springframework.security.oauth2.client.web.OAuth2LoginAuthenticationFilter@316cda31, com.gaogao.cucaishop.adm.security.JwtAuthenticationFilter@4dde8976, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@576b7c74, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@2251b3bc, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@4db77402, org.springframework.security.web.session.SessionManagementFilter@7fda2001, org.springframework.security.web.access.ExceptionTranslationFilter@12f279b5, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@1c8f6c66]
-""2019-11-11 17:24:04 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
-""2019-11-11 17:24:04 [main] WARN  o.s.b.a.f.FreeMarkerAutoConfiguration - Cannot find template location(s): [classpath:/templates/] (please add some templates, check your FreeMarker configuration, or set spring.freemarker.checkTemplateLocation=false)
-""2019-11-11 17:24:04 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8088 (http) with context path ''
-""2019-11-11 17:24:04 [main] INFO  c.g.cucaishop.CuCaiShopApplication - Started CuCaiShopApplication in 3.901 seconds (JVM running for 6.37)
-""2019-11-11 17:24:08 [Thread-11] INFO  o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+"2019-11-14 09:03:33 [main] INFO  c.g.cucaishop.CuCaiShopApplication - Starting CuCaiShopApplication on DLAP-0042 with PID 1076 (E:\Mirae\cu-cai-shop\out\production\classes started by Administrator in E:\Mirae\cu-cai-shop)
+""2019-11-14 09:03:33 [main] INFO  c.g.cucaishop.CuCaiShopApplication - No active profile set, falling back to default profiles: default
+""2019-11-14 09:03:35 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8088 (http)
+""2019-11-14 09:03:35 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+""2019-11-14 09:03:35 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/9.0.12
+""2019-11-14 09:03:35 [main] INFO  o.a.c.core.AprLifecycleListener - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk1.8.0_211\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files\TortoiseSVN\bin;C:\Program Files\Java\jdk1.8.0_211\bin;C:\Program Files\Java\jre1.8.0_211\bin;C:\Program Files\nodejs\;C:\Program Files (x86)\Yarn\bin\;C:\Program Files\Git\cmd;C:\Users\Administrator\AppData\Local\Yarn\bin;;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\Administrator\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\Administrator\AppData\Local\Microsoft\WindowsApps;;.]
+""2019-11-14 09:03:35 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+""2019-11-14 09:03:35 [main] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 2430 ms
+""2019-11-14 09:03:36 [main] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+""2019-11-14 09:03:36 [main] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+""2019-11-14 09:03:36 [main] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'formContentFilter' to: [/*]
+""2019-11-14 09:03:36 [main] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
+""2019-11-14 09:03:36 [main] INFO  o.s.b.w.s.DelegatingFilterProxyRegistrationBean - Mapping filter: 'springSecurityFilterChain' to: [/*]
+""2019-11-14 09:03:36 [main] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'jwtAuthenticationFilter' to: [/*]
+""2019-11-14 09:03:36 [main] INFO  o.s.b.w.s.ServletRegistrationBean - Servlet dispatcherServlet mapped to [/]
+""2019-11-14 09:03:36 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@75fe1619, org.springframework.security.web.context.SecurityContextPersistenceFilter@40709f9, org.springframework.security.web.header.HeaderWriterFilter@83bb0f, org.springframework.web.filter.CorsFilter@4e245739, org.springframework.security.web.authentication.logout.LogoutFilter@61615b4a, org.springframework.security.oauth2.client.web.OAuth2AuthorizationRequestRedirectFilter@78a8978a, org.springframework.security.oauth2.client.web.OAuth2LoginAuthenticationFilter@f171912, com.gaogao.cucaishop.adm.security.JwtAuthenticationFilter@6ca30b8a, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@6393bf8b, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4b862408, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5d66e944, org.springframework.security.web.session.SessionManagementFilter@6adc5b9c, org.springframework.security.web.access.ExceptionTranslationFilter@2accaec2, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@384fda47]
+""2019-11-14 09:03:36 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+""2019-11-14 09:03:37 [main] WARN  o.s.b.a.f.FreeMarkerAutoConfiguration - Cannot find template location(s): [classpath:/templates/] (please add some templates, check your FreeMarker configuration, or set spring.freemarker.checkTemplateLocation=false)
+""2019-11-14 09:03:37 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8088 (http) with context path ''
+""2019-11-14 09:03:37 [main] INFO  c.g.cucaishop.CuCaiShopApplication - Started CuCaiShopApplication in 5.002 seconds (JVM running for 9.555)
+""2019-11-14 09:05:27 [http-nio-8088-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+""2019-11-14 09:05:27 [http-nio-8088-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+""2019-11-14 09:05:27 [http-nio-8088-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 12 ms
+""2019-11-14 09:05:32 [http-nio-8088-exec-2] ERROR c.g.c.a.s.JwtAuthenticationEntryPoint - Responding with unauthorized error. Message - Full authentication is required to access this resource
+""2019-11-14 09:05:32 [http-nio-8088-exec-2] ERROR o.a.c.c.C.[Tomcat].[localhost] - Exception Processing ErrorPage[errorCode=0, location=/error]
+"java.lang.NoSuchMethodError: javax.servlet.http.HttpServletRequest.getHttpServletMapping()Ljavax/servlet/http/HttpServletMapping;
+	at org.apache.catalina.core.ApplicationHttpRequest.setRequest(ApplicationHttpRequest.java:690)
+	at org.apache.catalina.core.ApplicationHttpRequest.<init>(ApplicationHttpRequest.java:114)
+	at org.apache.catalina.core.ApplicationDispatcher.wrapRequest(ApplicationDispatcher.java:917)
+	at org.apache.catalina.core.ApplicationDispatcher.doForward(ApplicationDispatcher.java:358)
+	at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:312)
+	at org.apache.catalina.core.StandardHostValve.custom(StandardHostValve.java:394)
+	at org.apache.catalina.core.StandardHostValve.status(StandardHostValve.java:253)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:175)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:770)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1415)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+"2019-11-14 09:10:20 [Thread-11] INFO  o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+""2019-11-14 09:10:33 [main] INFO  c.g.cucaishop.CuCaiShopApplication - Starting CuCaiShopApplication on DLAP-0042 with PID 4640 (E:\Mirae\cu-cai-shop\out\production\classes started by Administrator in E:\Mirae\cu-cai-shop)
+""2019-11-14 09:10:33 [main] INFO  c.g.cucaishop.CuCaiShopApplication - No active profile set, falling back to default profiles: default
+""2019-11-14 09:10:35 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8088 (http)
+""2019-11-14 09:10:35 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+""2019-11-14 09:10:35 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/9.0.12
+""2019-11-14 09:10:35 [main] INFO  o.a.c.core.AprLifecycleListener - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk1.8.0_211\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files\TortoiseSVN\bin;C:\Program Files\Java\jdk1.8.0_211\bin;C:\Program Files\Java\jre1.8.0_211\bin;C:\Program Files\nodejs\;C:\Program Files (x86)\Yarn\bin\;C:\Program Files\Git\cmd;C:\Users\Administrator\AppData\Local\Yarn\bin;;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\Administrator\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\Administrator\AppData\Local\Microsoft\WindowsApps;;.]
+""2019-11-14 09:10:35 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+""2019-11-14 09:10:35 [main] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1734 ms
+""2019-11-14 09:10:35 [main] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+""2019-11-14 09:10:35 [main] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+""2019-11-14 09:10:35 [main] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'formContentFilter' to: [/*]
+""2019-11-14 09:10:35 [main] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
+""2019-11-14 09:10:35 [main] INFO  o.s.b.w.s.DelegatingFilterProxyRegistrationBean - Mapping filter: 'springSecurityFilterChain' to: [/*]
+""2019-11-14 09:10:35 [main] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'jwtAuthenticationFilter' to: [/*]
+""2019-11-14 09:10:35 [main] INFO  o.s.b.w.s.ServletRegistrationBean - Servlet dispatcherServlet mapped to [/]
+""2019-11-14 09:10:36 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@3d53e6f7, org.springframework.security.web.context.SecurityContextPersistenceFilter@8aeab9e, org.springframework.security.web.header.HeaderWriterFilter@654e6a90, org.springframework.web.filter.CorsFilter@1de4bee0, org.springframework.security.web.authentication.logout.LogoutFilter@4041739c, org.springframework.security.oauth2.client.web.OAuth2AuthorizationRequestRedirectFilter@3ad8717d, org.springframework.security.oauth2.client.web.OAuth2LoginAuthenticationFilter@4293e066, com.gaogao.cucaishop.adm.security.JwtAuthenticationFilter@7112ce6, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@3a00b15d, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@c02670f, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3ece79fe, org.springframework.security.web.session.SessionManagementFilter@16a5c7e4, org.springframework.security.web.access.ExceptionTranslationFilter@1150d471, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@3b0c3951]
+""2019-11-14 09:10:36 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+""2019-11-14 09:10:36 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8088 (http) with context path ''
+""2019-11-14 09:10:36 [main] INFO  c.g.cucaishop.CuCaiShopApplication - Started CuCaiShopApplication in 4.152 seconds (JVM running for 6.072)
+""2019-11-14 09:10:49 [http-nio-8088-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+""2019-11-14 09:10:49 [http-nio-8088-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+""2019-11-14 09:10:49 [http-nio-8088-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 14 ms
+""2019-11-14 09:10:53 [http-nio-8088-exec-3] ERROR c.g.c.a.s.JwtAuthenticationEntryPoint - Responding with unauthorized error. Message - Full authentication is required to access this resource
+""2019-11-14 09:10:53 [http-nio-8088-exec-3] ERROR o.a.c.c.C.[Tomcat].[localhost] - Exception Processing ErrorPage[errorCode=0, location=/error]
+"java.lang.NoSuchMethodError: javax.servlet.http.HttpServletRequest.getHttpServletMapping()Ljavax/servlet/http/HttpServletMapping;
+	at org.apache.catalina.core.ApplicationHttpRequest.setRequest(ApplicationHttpRequest.java:690)
+	at org.apache.catalina.core.ApplicationHttpRequest.<init>(ApplicationHttpRequest.java:114)
+	at org.apache.catalina.core.ApplicationDispatcher.wrapRequest(ApplicationDispatcher.java:917)
+	at org.apache.catalina.core.ApplicationDispatcher.doForward(ApplicationDispatcher.java:358)
+	at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:312)
+	at org.apache.catalina.core.StandardHostValve.custom(StandardHostValve.java:394)
+	at org.apache.catalina.core.StandardHostValve.status(StandardHostValve.java:253)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:175)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:770)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1415)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+"2019-11-14 09:11:47 [Thread-10] INFO  o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+""2019-11-14 09:12:03 [main] INFO  c.g.cucaishop.CuCaiShopApplication - Starting CuCaiShopApplication on DLAP-0042 with PID 512 (E:\Mirae\cu-cai-shop\out\production\classes started by Administrator in E:\Mirae\cu-cai-shop)
+""2019-11-14 09:12:03 [main] INFO  c.g.cucaishop.CuCaiShopApplication - No active profile set, falling back to default profiles: default
+""2019-11-14 09:12:05 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8088 (http)
+""2019-11-14 09:12:05 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+""2019-11-14 09:12:05 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/9.0.12
+""2019-11-14 09:12:05 [main] INFO  o.a.c.core.AprLifecycleListener - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk1.8.0_211\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files\TortoiseSVN\bin;C:\Program Files\Java\jdk1.8.0_211\bin;C:\Program Files\Java\jre1.8.0_211\bin;C:\Program Files\nodejs\;C:\Program Files (x86)\Yarn\bin\;C:\Program Files\Git\cmd;C:\Users\Administrator\AppData\Local\Yarn\bin;;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\Administrator\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\Administrator\AppData\Local\Microsoft\WindowsApps;;.]
+""2019-11-14 09:12:05 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+""2019-11-14 09:12:05 [main] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 2604 ms
+""2019-11-14 09:12:06 [main] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+""2019-11-14 09:12:06 [main] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+""2019-11-14 09:12:06 [main] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'formContentFilter' to: [/*]
+""2019-11-14 09:12:06 [main] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
+""2019-11-14 09:12:06 [main] INFO  o.s.b.w.s.DelegatingFilterProxyRegistrationBean - Mapping filter: 'springSecurityFilterChain' to: [/*]
+""2019-11-14 09:12:06 [main] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'jwtAuthenticationFilter' to: [/*]
+""2019-11-14 09:12:06 [main] INFO  o.s.b.w.s.ServletRegistrationBean - Servlet dispatcherServlet mapped to [/]
+""2019-11-14 09:12:07 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@3a36cd5, org.springframework.security.web.context.SecurityContextPersistenceFilter@6d229b1c, org.springframework.security.web.header.HeaderWriterFilter@535b1ae6, org.springframework.web.filter.CorsFilter@53f0d09c, org.springframework.security.web.authentication.logout.LogoutFilter@6c184d4d, org.springframework.security.oauth2.client.web.OAuth2AuthorizationRequestRedirectFilter@7f7c420c, org.springframework.security.oauth2.client.web.OAuth2LoginAuthenticationFilter@5d152bcd, com.gaogao.cucaishop.adm.security.JwtAuthenticationFilter@5ebffb44, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2da99821, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@7b1e5e55, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@47acd13b, org.springframework.security.web.session.SessionManagementFilter@54a2d96e, org.springframework.security.web.access.ExceptionTranslationFilter@415ef4d8, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@25be445f]
+""2019-11-14 09:12:07 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+""2019-11-14 09:12:08 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8088 (http) with context path ''
+""2019-11-14 09:12:08 [main] INFO  c.g.cucaishop.CuCaiShopApplication - Started CuCaiShopApplication in 5.72 seconds (JVM running for 7.729)
+""2019-11-14 09:12:15 [http-nio-8088-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+""2019-11-14 09:12:15 [http-nio-8088-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+""2019-11-14 09:12:15 [http-nio-8088-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 11 ms
+""2019-11-14 09:12:19 [http-nio-8088-exec-2] ERROR c.g.c.a.s.JwtAuthenticationEntryPoint - Responding with unauthorized error. Message - Full authentication is required to access this resource
+""2019-11-14 09:12:19 [http-nio-8088-exec-2] ERROR o.a.c.c.C.[Tomcat].[localhost] - Exception Processing ErrorPage[errorCode=0, location=/error]
+"java.lang.NoSuchMethodError: javax.servlet.http.HttpServletRequest.getHttpServletMapping()Ljavax/servlet/http/HttpServletMapping;
+	at org.apache.catalina.core.ApplicationHttpRequest.setRequest(ApplicationHttpRequest.java:690)
+	at org.apache.catalina.core.ApplicationHttpRequest.<init>(ApplicationHttpRequest.java:114)
+	at org.apache.catalina.core.ApplicationDispatcher.wrapRequest(ApplicationDispatcher.java:917)
+	at org.apache.catalina.core.ApplicationDispatcher.doForward(ApplicationDispatcher.java:358)
+	at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:312)
+	at org.apache.catalina.core.StandardHostValve.custom(StandardHostValve.java:394)
+	at org.apache.catalina.core.StandardHostValve.status(StandardHostValve.java:253)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:175)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:770)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1415)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+"2019-11-14 09:13:04 [Thread-11] INFO  o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+""2019-11-14 09:13:10 [main] INFO  c.g.cucaishop.CuCaiShopApplication - Starting CuCaiShopApplication on DLAP-0042 with PID 11600 (E:\Mirae\cu-cai-shop\out\production\classes started by Administrator in E:\Mirae\cu-cai-shop)
+""2019-11-14 09:13:10 [main] INFO  c.g.cucaishop.CuCaiShopApplication - No active profile set, falling back to default profiles: default
+""2019-11-14 09:13:12 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8088 (http)
+""2019-11-14 09:13:12 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+""2019-11-14 09:13:12 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/9.0.12
+""2019-11-14 09:13:12 [main] INFO  o.a.c.core.AprLifecycleListener - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk1.8.0_211\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files\TortoiseSVN\bin;C:\Program Files\Java\jdk1.8.0_211\bin;C:\Program Files\Java\jre1.8.0_211\bin;C:\Program Files\nodejs\;C:\Program Files (x86)\Yarn\bin\;C:\Program Files\Git\cmd;C:\Users\Administrator\AppData\Local\Yarn\bin;;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\Administrator\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\Administrator\AppData\Local\Microsoft\WindowsApps;;.]
+""2019-11-14 09:13:13 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+""2019-11-14 09:13:13 [main] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 2214 ms
+""2019-11-14 09:13:13 [main] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+""2019-11-14 09:13:13 [main] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+""2019-11-14 09:13:13 [main] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'formContentFilter' to: [/*]
+""2019-11-14 09:13:13 [main] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
+""2019-11-14 09:13:13 [main] INFO  o.s.b.w.s.DelegatingFilterProxyRegistrationBean - Mapping filter: 'springSecurityFilterChain' to: [/*]
+""2019-11-14 09:13:13 [main] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'jwtAuthenticationFilter' to: [/*]
+""2019-11-14 09:13:13 [main] INFO  o.s.b.w.s.ServletRegistrationBean - Servlet dispatcherServlet mapped to [/]
+""2019-11-14 09:13:14 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@61a2aeb7, org.springframework.security.web.context.SecurityContextPersistenceFilter@461c3709, org.springframework.security.web.header.HeaderWriterFilter@2a7d9b41, org.springframework.web.filter.CorsFilter@64b70f41, org.springframework.security.web.authentication.logout.LogoutFilter@73fbdf68, org.springframework.security.oauth2.client.web.OAuth2AuthorizationRequestRedirectFilter@1ca3d25b, org.springframework.security.oauth2.client.web.OAuth2LoginAuthenticationFilter@2287395, com.gaogao.cucaishop.adm.security.JwtAuthenticationFilter@479111ba, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@3f63a513, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@7944b8b4, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5f8d9767, org.springframework.security.web.session.SessionManagementFilter@5d1b1c2a, org.springframework.security.web.access.ExceptionTranslationFilter@609319c3, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@2251b3bc]
+""2019-11-14 09:13:14 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+""2019-11-14 09:13:14 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8088 (http) with context path ''
+""2019-11-14 09:13:14 [main] INFO  c.g.cucaishop.CuCaiShopApplication - Started CuCaiShopApplication in 5.194 seconds (JVM running for 6.996)
+""2019-11-14 09:13:31 [Thread-12] INFO  o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+""2019-11-14 09:13:46 [main] INFO  c.g.cucaishop.CuCaiShopApplication - Starting CuCaiShopApplication on DLAP-0042 with PID 1184 (E:\Mirae\cu-cai-shop\out\production\classes started by Administrator in E:\Mirae\cu-cai-shop)
+""2019-11-14 09:13:46 [main] INFO  c.g.cucaishop.CuCaiShopApplication - No active profile set, falling back to default profiles: default
+""2019-11-14 09:13:48 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8088 (http)
+""2019-11-14 09:13:48 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+""2019-11-14 09:13:48 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/9.0.12
+""2019-11-14 09:13:48 [main] INFO  o.a.c.core.AprLifecycleListener - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk1.8.0_211\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files\TortoiseSVN\bin;C:\Program Files\Java\jdk1.8.0_211\bin;C:\Program Files\Java\jre1.8.0_211\bin;C:\Program Files\nodejs\;C:\Program Files (x86)\Yarn\bin\;C:\Program Files\Git\cmd;C:\Users\Administrator\AppData\Local\Yarn\bin;;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\Administrator\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\Administrator\AppData\Local\Microsoft\WindowsApps;;.]
+""2019-11-14 09:13:48 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+""2019-11-14 09:13:48 [main] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1727 ms
+""2019-11-14 09:13:49 [main] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+""2019-11-14 09:13:49 [main] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+""2019-11-14 09:13:49 [main] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'formContentFilter' to: [/*]
+""2019-11-14 09:13:49 [main] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
+""2019-11-14 09:13:49 [main] INFO  o.s.b.w.s.DelegatingFilterProxyRegistrationBean - Mapping filter: 'springSecurityFilterChain' to: [/*]
+""2019-11-14 09:13:49 [main] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'jwtAuthenticationFilter' to: [/*]
+""2019-11-14 09:13:49 [main] INFO  o.s.b.w.s.ServletRegistrationBean - Servlet dispatcherServlet mapped to [/]
+""2019-11-14 09:13:49 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2173a742, org.springframework.security.web.context.SecurityContextPersistenceFilter@70a898b0, org.springframework.security.web.header.HeaderWriterFilter@a7cf42f, org.springframework.web.filter.CorsFilter@706ceca6, org.springframework.security.web.authentication.logout.LogoutFilter@3e3cd6fe, org.springframework.security.oauth2.client.web.OAuth2AuthorizationRequestRedirectFilter@3d88e6b9, org.springframework.security.oauth2.client.web.OAuth2LoginAuthenticationFilter@22bf9122, com.gaogao.cucaishop.adm.security.JwtAuthenticationFilter@d257579, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@3b7c80c6, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@6b4fc2d1, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7f6329cb, org.springframework.security.web.session.SessionManagementFilter@28e0e464, org.springframework.security.web.access.ExceptionTranslationFilter@4f2d014a, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@66fbc5e7]
+""2019-11-14 09:13:49 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+""2019-11-14 09:13:50 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8088 (http) with context path ''
+""2019-11-14 09:13:50 [main] INFO  c.g.cucaishop.CuCaiShopApplication - Started CuCaiShopApplication in 4.188 seconds (JVM running for 5.772)
+""2019-11-14 09:15:21 [http-nio-8088-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+""2019-11-14 09:15:21 [http-nio-8088-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+""2019-11-14 09:15:21 [http-nio-8088-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 15 ms
+""2019-11-14 09:15:25 [http-nio-8088-exec-2] ERROR c.g.c.a.s.JwtAuthenticationEntryPoint - Responding with unauthorized error. Message - Full authentication is required to access this resource
+""2019-11-14 09:15:25 [http-nio-8088-exec-2] ERROR o.a.c.c.C.[Tomcat].[localhost] - Exception Processing ErrorPage[errorCode=0, location=/error]
+"java.lang.NoSuchMethodError: javax.servlet.http.HttpServletRequest.getHttpServletMapping()Ljavax/servlet/http/HttpServletMapping;
+	at org.apache.catalina.core.ApplicationHttpRequest.setRequest(ApplicationHttpRequest.java:690)
+	at org.apache.catalina.core.ApplicationHttpRequest.<init>(ApplicationHttpRequest.java:114)
+	at org.apache.catalina.core.ApplicationDispatcher.wrapRequest(ApplicationDispatcher.java:917)
+	at org.apache.catalina.core.ApplicationDispatcher.doForward(ApplicationDispatcher.java:358)
+	at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:312)
+	at org.apache.catalina.core.StandardHostValve.custom(StandardHostValve.java:394)
+	at org.apache.catalina.core.StandardHostValve.status(StandardHostValve.java:253)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:175)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:770)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1415)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+"2019-11-14 09:18:36 [Thread-10] INFO  o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+""2019-11-14 09:18:48 [main] INFO  c.g.cucaishop.CuCaiShopApplication - Starting CuCaiShopApplication on DLAP-0042 with PID 16420 (E:\Mirae\cu-cai-shop\out\production\classes started by Administrator in E:\Mirae\cu-cai-shop)
+""2019-11-14 09:18:48 [main] INFO  c.g.cucaishop.CuCaiShopApplication - No active profile set, falling back to default profiles: default
+""2019-11-14 09:18:48 [main] INFO  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@6a47b187: startup date [Thu Nov 14 09:18:48 ICT 2019]; root of context hierarchy
+""2019-11-14 09:18:49 [main] INFO  o.s.b.f.a.AutowiredAnnotationBeanPostProcessor - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+""2019-11-14 09:18:50 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8088 (http)
+""2019-11-14 09:18:50 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+""2019-11-14 09:18:50 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/9.0.12
+""2019-11-14 09:18:50 [main] INFO  o.a.c.core.AprLifecycleListener - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk1.8.0_211\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files\TortoiseSVN\bin;C:\Program Files\Java\jdk1.8.0_211\bin;C:\Program Files\Java\jre1.8.0_211\bin;C:\Program Files\nodejs\;C:\Program Files (x86)\Yarn\bin\;C:\Program Files\Git\cmd;C:\Users\Administrator\AppData\Local\Yarn\bin;;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\Administrator\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\Administrator\AppData\Local\Microsoft\WindowsApps;;.]
+""2019-11-14 09:18:50 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+""2019-11-14 09:18:50 [main] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 2036 ms
+""2019-11-14 09:18:50 [main] ERROR o.s.b.w.e.tomcat.TomcatStarter - Error starting Tomcat context. Exception: org.springframework.beans.factory.UnsatisfiedDependencyException. Message: Error creating bean with name 'webSecurityConfig': Unsatisfied dependency expressed through field 'customOAuth2UserService'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'customOAuth2UserService' defined in file [E:\Mirae\cu-cai-shop\out\production\classes\com\gaogao\cucaishop\adm\service\CustomOAuth2UserService.class]: Instantiation of bean failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.gaogao.cucaishop.adm.service.CustomOAuth2UserService]: Constructor threw exception; nested exception is java.lang.NoClassDefFoundError: org/springframework/security/oauth2/core/http/converter/OAuth2ErrorHttpMessageConverter
+""2019-11-14 09:18:50 [main] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+""2019-11-14 09:18:50 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Unable to start web server; nested exception is org.springframework.boot.web.server.WebServerException: Unable to start embedded Tomcat
+""2019-11-14 09:20:14 [main] INFO  c.g.cucaishop.CuCaiShopApplication - Starting CuCaiShopApplication on DLAP-0042 with PID 1380 (E:\Mirae\cu-cai-shop\out\production\classes started by Administrator in E:\Mirae\cu-cai-shop)
+""2019-11-14 09:20:14 [main] INFO  c.g.cucaishop.CuCaiShopApplication - No active profile set, falling back to default profiles: default
+""2019-11-14 09:20:14 [main] INFO  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@62656be4: startup date [Thu Nov 14 09:20:14 ICT 2019]; root of context hierarchy
+""2019-11-14 09:20:15 [main] INFO  o.s.b.f.a.AutowiredAnnotationBeanPostProcessor - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+""2019-11-14 09:20:16 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8088 (http)
+""2019-11-14 09:20:16 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+""2019-11-14 09:20:16 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.35
+""2019-11-14 09:20:16 [localhost-startStop-1] INFO  o.a.c.core.AprLifecycleListener - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk1.8.0_211\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files\TortoiseSVN\bin;C:\Program Files\Java\jdk1.8.0_211\bin;C:\Program Files\Java\jre1.8.0_211\bin;C:\Program Files\nodejs\;C:\Program Files (x86)\Yarn\bin\;C:\Program Files\Git\cmd;C:\Users\Administrator\AppData\Local\Yarn\bin;;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\Administrator\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\Administrator\AppData\Local\Microsoft\WindowsApps;;.]
+""2019-11-14 09:20:16 [localhost-startStop-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+""2019-11-14 09:20:16 [localhost-startStop-1] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1714 ms
+""2019-11-14 09:20:16 [localhost-startStop-1] ERROR o.s.b.w.e.tomcat.TomcatStarter - Error starting Tomcat context. Exception: org.springframework.beans.factory.UnsatisfiedDependencyException. Message: Error creating bean with name 'webSecurityConfig': Unsatisfied dependency expressed through field 'customOAuth2UserService'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'customOAuth2UserService' defined in file [E:\Mirae\cu-cai-shop\out\production\classes\com\gaogao\cucaishop\adm\service\CustomOAuth2UserService.class]: Instantiation of bean failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.gaogao.cucaishop.adm.service.CustomOAuth2UserService]: Constructor threw exception; nested exception is java.lang.NoClassDefFoundError: org/springframework/security/oauth2/core/http/converter/OAuth2ErrorHttpMessageConverter
+""2019-11-14 09:20:16 [main] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+""2019-11-14 09:20:16 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Unable to start web server; nested exception is org.springframework.boot.web.server.WebServerException: Unable to start embedded Tomcat
+""2019-11-14 09:21:13 [main] INFO  c.g.cucaishop.CuCaiShopApplication - Starting CuCaiShopApplication on DLAP-0042 with PID 3756 (E:\Mirae\cu-cai-shop\out\production\classes started by Administrator in E:\Mirae\cu-cai-shop)
+""2019-11-14 09:21:13 [main] INFO  c.g.cucaishop.CuCaiShopApplication - No active profile set, falling back to default profiles: default
+""2019-11-14 09:21:13 [main] INFO  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@6d026701: startup date [Thu Nov 14 09:21:13 ICT 2019]; root of context hierarchy
+""2019-11-14 09:21:14 [main] INFO  o.s.b.f.a.AutowiredAnnotationBeanPostProcessor - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+""2019-11-14 09:21:15 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8088 (http)
+""2019-11-14 09:21:15 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+""2019-11-14 09:21:15 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.35
+""2019-11-14 09:21:15 [localhost-startStop-1] INFO  o.a.c.core.AprLifecycleListener - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk1.8.0_211\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files\TortoiseSVN\bin;C:\Program Files\Java\jdk1.8.0_211\bin;C:\Program Files\Java\jre1.8.0_211\bin;C:\Program Files\nodejs\;C:\Program Files (x86)\Yarn\bin\;C:\Program Files\Git\cmd;C:\Users\Administrator\AppData\Local\Yarn\bin;;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\Administrator\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\Administrator\AppData\Local\Microsoft\WindowsApps;;.]
+""2019-11-14 09:21:15 [localhost-startStop-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+""2019-11-14 09:21:15 [localhost-startStop-1] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1584 ms
+""2019-11-14 09:21:15 [localhost-startStop-1] ERROR o.s.b.w.e.tomcat.TomcatStarter - Error starting Tomcat context. Exception: org.springframework.beans.factory.UnsatisfiedDependencyException. Message: Error creating bean with name 'webSecurityConfig': Unsatisfied dependency expressed through field 'customOAuth2UserService'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'customOAuth2UserService' defined in file [E:\Mirae\cu-cai-shop\out\production\classes\com\gaogao\cucaishop\adm\service\CustomOAuth2UserService.class]: Instantiation of bean failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.gaogao.cucaishop.adm.service.CustomOAuth2UserService]: Constructor threw exception; nested exception is java.lang.NoClassDefFoundError: org/springframework/security/oauth2/core/http/converter/OAuth2ErrorHttpMessageConverter
+""2019-11-14 09:21:15 [main] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+""2019-11-14 09:21:15 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Unable to start web server; nested exception is org.springframework.boot.web.server.WebServerException: Unable to start embedded Tomcat
+""2019-11-14 09:24:40 [main] INFO  c.g.cucaishop.CuCaiShopApplication - Starting CuCaiShopApplication on DLAP-0042 with PID 12604 (E:\Mirae\cu-cai-shop\out\production\classes started by Administrator in E:\Mirae\cu-cai-shop)
+""2019-11-14 09:24:40 [main] INFO  c.g.cucaishop.CuCaiShopApplication - No active profile set, falling back to default profiles: default
+""2019-11-14 09:24:41 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8088 (http)
+""2019-11-14 09:24:41 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+""2019-11-14 09:24:41 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/9.0.12
+""2019-11-14 09:24:41 [main] INFO  o.a.c.core.AprLifecycleListener - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk1.8.0_211\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files\TortoiseSVN\bin;C:\Program Files\Java\jdk1.8.0_211\bin;C:\Program Files\Java\jre1.8.0_211\bin;C:\Program Files\nodejs\;C:\Program Files (x86)\Yarn\bin\;C:\Program Files\Git\cmd;C:\Users\Administrator\AppData\Local\Yarn\bin;;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\Administrator\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\Administrator\AppData\Local\Microsoft\WindowsApps;;.]
+""2019-11-14 09:24:42 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+""2019-11-14 09:24:42 [main] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1520 ms
+""2019-11-14 09:24:42 [main] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+""2019-11-14 09:24:42 [main] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+""2019-11-14 09:24:42 [main] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'formContentFilter' to: [/*]
+""2019-11-14 09:24:42 [main] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
+""2019-11-14 09:24:42 [main] INFO  o.s.b.w.s.DelegatingFilterProxyRegistrationBean - Mapping filter: 'springSecurityFilterChain' to: [/*]
+""2019-11-14 09:24:42 [main] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'jwtAuthenticationFilter' to: [/*]
+""2019-11-14 09:24:42 [main] INFO  o.s.b.w.s.ServletRegistrationBean - Servlet dispatcherServlet mapped to [/]
+""2019-11-14 09:24:42 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@750ed637, org.springframework.security.web.context.SecurityContextPersistenceFilter@5a1f778, org.springframework.security.web.header.HeaderWriterFilter@5cd96b41, org.springframework.web.filter.CorsFilter@5190010f, org.springframework.security.web.authentication.logout.LogoutFilter@1da1380b, org.springframework.security.oauth2.client.web.OAuth2AuthorizationRequestRedirectFilter@58fd1214, org.springframework.security.oauth2.client.web.OAuth2LoginAuthenticationFilter@7d8cf9ac, com.gaogao.cucaishop.adm.security.JwtAuthenticationFilter@d70f722, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@574059d5, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4a50d04a, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@673e76b3, org.springframework.security.web.session.SessionManagementFilter@73041b7d, org.springframework.security.web.access.ExceptionTranslationFilter@36776c32, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@17207f5b]
+""2019-11-14 09:24:43 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+""2019-11-14 09:24:43 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8088 (http) with context path ''
+""2019-11-14 09:24:43 [main] INFO  c.g.cucaishop.CuCaiShopApplication - Started CuCaiShopApplication in 3.75 seconds (JVM running for 5.484)
+""2019-11-14 09:25:14 [http-nio-8088-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+""2019-11-14 09:25:14 [http-nio-8088-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+""2019-11-14 09:25:14 [http-nio-8088-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 12 ms
+""2019-11-14 09:25:18 [http-nio-8088-exec-2] ERROR c.g.c.a.s.JwtAuthenticationEntryPoint - Responding with unauthorized error. Message - Full authentication is required to access this resource
+""2019-11-14 09:25:18 [http-nio-8088-exec-2] ERROR o.a.c.c.C.[Tomcat].[localhost] - Exception Processing ErrorPage[errorCode=0, location=/error]
+"java.lang.NoSuchMethodError: javax.servlet.http.HttpServletRequest.getHttpServletMapping()Ljavax/servlet/http/HttpServletMapping;
+	at org.apache.catalina.core.ApplicationHttpRequest.setRequest(ApplicationHttpRequest.java:690)
+	at org.apache.catalina.core.ApplicationHttpRequest.<init>(ApplicationHttpRequest.java:114)
+	at org.apache.catalina.core.ApplicationDispatcher.wrapRequest(ApplicationDispatcher.java:917)
+	at org.apache.catalina.core.ApplicationDispatcher.doForward(ApplicationDispatcher.java:358)
+	at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:312)
+	at org.apache.catalina.core.StandardHostValve.custom(StandardHostValve.java:394)
+	at org.apache.catalina.core.StandardHostValve.status(StandardHostValve.java:253)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:175)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:770)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1415)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+"2019-11-14 09:31:43 [Thread-9] INFO  o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+""2019-11-14 09:31:54 [main] INFO  c.g.cucaishop.CuCaiShopApplication - Starting CuCaiShopApplication on DLAP-0042 with PID 9132 (E:\Mirae\cu-cai-shop\out\production\classes started by Administrator in E:\Mirae\cu-cai-shop)
+""2019-11-14 09:31:54 [main] INFO  c.g.cucaishop.CuCaiShopApplication - No active profile set, falling back to default profiles: default
+""2019-11-14 09:31:55 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8088 (http)
+""2019-11-14 09:31:55 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+""2019-11-14 09:31:55 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.37
+""2019-11-14 09:31:55 [localhost-startStop-1] INFO  o.a.c.core.AprLifecycleListener - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk1.8.0_211\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files\TortoiseSVN\bin;C:\Program Files\Java\jdk1.8.0_211\bin;C:\Program Files\Java\jre1.8.0_211\bin;C:\Program Files\nodejs\;C:\Program Files (x86)\Yarn\bin\;C:\Program Files\Git\cmd;C:\Users\Administrator\AppData\Local\Yarn\bin;;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\Administrator\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\Administrator\AppData\Local\Microsoft\WindowsApps;;.]
+""2019-11-14 09:31:56 [localhost-startStop-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+""2019-11-14 09:31:56 [localhost-startStop-1] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1780 ms
+""2019-11-14 09:31:56 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+""2019-11-14 09:31:56 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+""2019-11-14 09:31:56 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'formContentFilter' to: [/*]
+""2019-11-14 09:31:56 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
+""2019-11-14 09:31:56 [localhost-startStop-1] INFO  o.s.b.w.s.DelegatingFilterProxyRegistrationBean - Mapping filter: 'springSecurityFilterChain' to: [/*]
+""2019-11-14 09:31:56 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'jwtAuthenticationFilter' to: [/*]
+""2019-11-14 09:31:56 [localhost-startStop-1] INFO  o.s.b.w.s.ServletRegistrationBean - Servlet dispatcherServlet mapped to [/]
+""2019-11-14 09:31:56 [localhost-startStop-1] ERROR o.a.c.c.C.[Tomcat].[localhost].[/] - Exception sending context initialized event to listener instance of class [org.apache.tomcat.websocket.server.WsContextListener]
+"java.lang.NoClassDefFoundError: javax/servlet/GenericFilter
+	at java.lang.ClassLoader.defineClass1(Native Method)
+	at java.lang.ClassLoader.defineClass(ClassLoader.java:763)
+	at java.security.SecureClassLoader.defineClass(SecureClassLoader.java:142)
+	at java.net.URLClassLoader.defineClass(URLClassLoader.java:468)
+	at java.net.URLClassLoader.access$100(URLClassLoader.java:74)
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:369)
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:363)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:362)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:424)
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:349)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:357)
+	at org.apache.tomcat.websocket.server.WsServerContainer.<init>(WsServerContainer.java:109)
+	at org.apache.tomcat.websocket.server.WsSci.init(WsSci.java:131)
+	at org.apache.tomcat.websocket.server.WsContextListener.contextInitialized(WsContextListener.java:39)
+	at org.apache.catalina.core.StandardContext.listenerStart(StandardContext.java:4812)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5278)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:150)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1423)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1413)
+	at java.util.concurrent.FutureTask.run$$$capture(FutureTask.java:266)
+	at java.util.concurrent.FutureTask.run(FutureTask.java)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.lang.ClassNotFoundException: javax.servlet.GenericFilter
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:382)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:424)
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:349)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:357)
+	... 25 common frames omitted
+"2019-11-14 09:31:56 [localhost-startStop-1] ERROR o.a.catalina.core.StandardContext - One or more listeners failed to start. Full details will be found in the appropriate container log file
+""2019-11-14 09:31:56 [localhost-startStop-1] ERROR o.a.catalina.core.StandardContext - Context [] startup failed due to previous errors
+""2019-11-14 09:31:56 [main] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+""2019-11-14 09:31:56 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Unable to start web server; nested exception is org.springframework.boot.web.server.WebServerException: Unable to start embedded Tomcat
+""2019-11-14 09:31:56 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+""2019-11-14 09:31:56 [main] ERROR o.s.boot.SpringApplication - Application run failed
+"org.springframework.context.ApplicationContextException: Unable to start web server; nested exception is org.springframework.boot.web.server.WebServerException: Unable to start embedded Tomcat
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:155)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:540)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:140)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:775)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:316)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1260)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1248)
+	at com.gaogao.cucaishop.CuCaiShopApplication.main(CuCaiShopApplication.java:15)
+Caused by: org.springframework.boot.web.server.WebServerException: Unable to start embedded Tomcat
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize(TomcatWebServer.java:125)
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.<init>(TomcatWebServer.java:86)
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getTomcatWebServer(TomcatServletWebServerFactory.java:414)
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getWebServer(TomcatServletWebServerFactory.java:174)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.createWebServer(ServletWebServerApplicationContext.java:179)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:152)
+	... 8 common frames omitted
+Caused by: java.lang.IllegalStateException: StandardEngine[Tomcat].StandardHost[localhost].TomcatEmbeddedContext[] failed to start
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.rethrowDeferredStartupExceptions(TomcatWebServer.java:171)
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize(TomcatWebServer.java:109)
+	... 13 common frames omitted
+"2019-11-14 09:32:36 [main] INFO  c.g.cucaishop.CuCaiShopApplication - Starting CuCaiShopApplication on DLAP-0042 with PID 5512 (E:\Mirae\cu-cai-shop\out\production\classes started by Administrator in E:\Mirae\cu-cai-shop)
+""2019-11-14 09:32:36 [main] INFO  c.g.cucaishop.CuCaiShopApplication - No active profile set, falling back to default profiles: default
+""2019-11-14 09:32:38 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8088 (http)
+""2019-11-14 09:32:38 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+""2019-11-14 09:32:38 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.37
+""2019-11-14 09:32:38 [localhost-startStop-1] INFO  o.a.c.core.AprLifecycleListener - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk1.8.0_211\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files\TortoiseSVN\bin;C:\Program Files\Java\jdk1.8.0_211\bin;C:\Program Files\Java\jre1.8.0_211\bin;C:\Program Files\nodejs\;C:\Program Files (x86)\Yarn\bin\;C:\Program Files\Git\cmd;C:\Users\Administrator\AppData\Local\Yarn\bin;;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\Administrator\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\Administrator\AppData\Local\Microsoft\WindowsApps;;.]
+""2019-11-14 09:32:39 [localhost-startStop-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+""2019-11-14 09:32:39 [localhost-startStop-1] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 2771 ms
+""2019-11-14 09:32:39 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+""2019-11-14 09:32:39 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+""2019-11-14 09:32:39 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'formContentFilter' to: [/*]
+""2019-11-14 09:32:39 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
+""2019-11-14 09:32:39 [localhost-startStop-1] INFO  o.s.b.w.s.DelegatingFilterProxyRegistrationBean - Mapping filter: 'springSecurityFilterChain' to: [/*]
+""2019-11-14 09:32:39 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'jwtAuthenticationFilter' to: [/*]
+""2019-11-14 09:32:39 [localhost-startStop-1] INFO  o.s.b.w.s.ServletRegistrationBean - Servlet dispatcherServlet mapped to [/]
+""2019-11-14 09:32:39 [localhost-startStop-1] ERROR o.a.c.c.C.[Tomcat].[localhost].[/] - Exception sending context initialized event to listener instance of class [org.apache.tomcat.websocket.server.WsContextListener]
+"java.lang.NoClassDefFoundError: javax/servlet/GenericFilter
+	at java.lang.ClassLoader.defineClass1(Native Method)
+	at java.lang.ClassLoader.defineClass(ClassLoader.java:763)
+	at java.security.SecureClassLoader.defineClass(SecureClassLoader.java:142)
+	at java.net.URLClassLoader.defineClass(URLClassLoader.java:468)
+	at java.net.URLClassLoader.access$100(URLClassLoader.java:74)
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:369)
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:363)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:362)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:424)
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:349)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:357)
+	at org.apache.tomcat.websocket.server.WsServerContainer.<init>(WsServerContainer.java:109)
+	at org.apache.tomcat.websocket.server.WsSci.init(WsSci.java:131)
+	at org.apache.tomcat.websocket.server.WsContextListener.contextInitialized(WsContextListener.java:39)
+	at org.apache.catalina.core.StandardContext.listenerStart(StandardContext.java:4812)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5278)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:150)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1423)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1413)
+	at java.util.concurrent.FutureTask.run$$$capture(FutureTask.java:266)
+	at java.util.concurrent.FutureTask.run(FutureTask.java)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.lang.ClassNotFoundException: javax.servlet.GenericFilter
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:382)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:424)
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:349)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:357)
+	... 25 common frames omitted
+"2019-11-14 09:32:39 [localhost-startStop-1] ERROR o.a.catalina.core.StandardContext - One or more listeners failed to start. Full details will be found in the appropriate container log file
+""2019-11-14 09:32:39 [localhost-startStop-1] ERROR o.a.catalina.core.StandardContext - Context [] startup failed due to previous errors
+""2019-11-14 09:32:40 [main] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+""2019-11-14 09:32:40 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Unable to start web server; nested exception is org.springframework.boot.web.server.WebServerException: Unable to start embedded Tomcat
+""2019-11-14 09:32:40 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+""2019-11-14 09:32:40 [main] ERROR o.s.boot.SpringApplication - Application run failed
+"org.springframework.context.ApplicationContextException: Unable to start web server; nested exception is org.springframework.boot.web.server.WebServerException: Unable to start embedded Tomcat
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:155)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:540)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:140)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:775)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:316)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1260)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1248)
+	at com.gaogao.cucaishop.CuCaiShopApplication.main(CuCaiShopApplication.java:15)
+Caused by: org.springframework.boot.web.server.WebServerException: Unable to start embedded Tomcat
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize(TomcatWebServer.java:125)
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.<init>(TomcatWebServer.java:86)
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getTomcatWebServer(TomcatServletWebServerFactory.java:414)
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getWebServer(TomcatServletWebServerFactory.java:174)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.createWebServer(ServletWebServerApplicationContext.java:179)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:152)
+	... 8 common frames omitted
+Caused by: java.lang.IllegalStateException: StandardEngine[Tomcat].StandardHost[localhost].TomcatEmbeddedContext[] failed to start
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.rethrowDeferredStartupExceptions(TomcatWebServer.java:171)
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize(TomcatWebServer.java:109)
+	... 13 common frames omitted
+"2019-11-14 09:34:23 [main] INFO  c.g.cucaishop.CuCaiShopApplication - Starting CuCaiShopApplication on DLAP-0042 with PID 8248 (E:\Mirae\cu-cai-shop\out\production\classes started by Administrator in E:\Mirae\cu-cai-shop)
+""2019-11-14 09:34:23 [main] INFO  c.g.cucaishop.CuCaiShopApplication - No active profile set, falling back to default profiles: default
+""2019-11-14 09:34:24 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8088 (http)
+""2019-11-14 09:34:24 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+""2019-11-14 09:34:24 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/9.0.12
+""2019-11-14 09:34:25 [main] INFO  o.a.c.core.AprLifecycleListener - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk1.8.0_211\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files\TortoiseSVN\bin;C:\Program Files\Java\jdk1.8.0_211\bin;C:\Program Files\Java\jre1.8.0_211\bin;C:\Program Files\nodejs\;C:\Program Files (x86)\Yarn\bin\;C:\Program Files\Git\cmd;C:\Users\Administrator\AppData\Local\Yarn\bin;;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\Administrator\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\Administrator\AppData\Local\Microsoft\WindowsApps;;.]
+""2019-11-14 09:34:25 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+""2019-11-14 09:34:25 [main] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1813 ms
+""2019-11-14 09:34:25 [main] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+""2019-11-14 09:34:25 [main] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+""2019-11-14 09:34:25 [main] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'formContentFilter' to: [/*]
+""2019-11-14 09:34:25 [main] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
+""2019-11-14 09:34:25 [main] INFO  o.s.b.w.s.DelegatingFilterProxyRegistrationBean - Mapping filter: 'springSecurityFilterChain' to: [/*]
+""2019-11-14 09:34:25 [main] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'jwtAuthenticationFilter' to: [/*]
+""2019-11-14 09:34:25 [main] INFO  o.s.b.w.s.ServletRegistrationBean - Servlet dispatcherServlet mapped to [/]
+""2019-11-14 09:34:26 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7f13811b, org.springframework.security.web.context.SecurityContextPersistenceFilter@25c2a9e3, org.springframework.security.web.header.HeaderWriterFilter@66bf40e5, org.springframework.web.filter.CorsFilter@59fc6d05, org.springframework.security.web.authentication.logout.LogoutFilter@43ecfeb5, org.springframework.security.oauth2.client.web.OAuth2AuthorizationRequestRedirectFilter@3bfae028, org.springframework.security.oauth2.client.web.OAuth2LoginAuthenticationFilter@1775c4e7, com.gaogao.cucaishop.adm.security.JwtAuthenticationFilter@631cb129, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@60f21960, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@79476a4e, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@78307a56, org.springframework.security.web.session.SessionManagementFilter@5e26f1ed, org.springframework.security.web.access.ExceptionTranslationFilter@5974b7e8, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@67332b1e]
+""2019-11-14 09:34:26 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+""2019-11-14 09:34:26 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8088 (http) with context path ''
+""2019-11-14 09:34:26 [main] INFO  c.g.cucaishop.CuCaiShopApplication - Started CuCaiShopApplication in 4.197 seconds (JVM running for 5.893)
+""2019-11-14 09:34:34 [http-nio-8088-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+""2019-11-14 09:34:34 [http-nio-8088-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+""2019-11-14 09:34:34 [http-nio-8088-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 13 ms
+""2019-11-14 09:34:38 [http-nio-8088-exec-3] ERROR c.g.c.a.s.JwtAuthenticationEntryPoint - Responding with unauthorized error. Message - Full authentication is required to access this resource
+""2019-11-14 09:34:38 [http-nio-8088-exec-3] ERROR o.a.c.c.C.[Tomcat].[localhost] - Exception Processing ErrorPage[errorCode=0, location=/error]
+"java.lang.NoSuchMethodError: javax.servlet.http.HttpServletRequest.getHttpServletMapping()Ljavax/servlet/http/HttpServletMapping;
+	at org.apache.catalina.core.ApplicationHttpRequest.setRequest(ApplicationHttpRequest.java:690)
+	at org.apache.catalina.core.ApplicationHttpRequest.<init>(ApplicationHttpRequest.java:114)
+	at org.apache.catalina.core.ApplicationDispatcher.wrapRequest(ApplicationDispatcher.java:917)
+	at org.apache.catalina.core.ApplicationDispatcher.doForward(ApplicationDispatcher.java:358)
+	at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:312)
+	at org.apache.catalina.core.StandardHostValve.custom(StandardHostValve.java:394)
+	at org.apache.catalina.core.StandardHostValve.status(StandardHostValve.java:253)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:175)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:770)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1415)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+"2019-11-14 09:35:13 [Thread-11] INFO  o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+""2019-11-14 09:35:18 [main] INFO  c.g.cucaishop.CuCaiShopApplication - Starting CuCaiShopApplication on DLAP-0042 with PID 18888 (E:\Mirae\cu-cai-shop\out\production\classes started by Administrator in E:\Mirae\cu-cai-shop)
+""2019-11-14 09:35:18 [main] INFO  c.g.cucaishop.CuCaiShopApplication - No active profile set, falling back to default profiles: default
+""2019-11-14 09:35:19 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8088 (http)
+""2019-11-14 09:35:19 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+""2019-11-14 09:35:19 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/9.0.12
+""2019-11-14 09:35:19 [main] INFO  o.a.c.core.AprLifecycleListener - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk1.8.0_211\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files\TortoiseSVN\bin;C:\Program Files\Java\jdk1.8.0_211\bin;C:\Program Files\Java\jre1.8.0_211\bin;C:\Program Files\nodejs\;C:\Program Files (x86)\Yarn\bin\;C:\Program Files\Git\cmd;C:\Users\Administrator\AppData\Local\Yarn\bin;;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\Administrator\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\Administrator\AppData\Local\Microsoft\WindowsApps;;.]
+""2019-11-14 09:35:19 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+""2019-11-14 09:35:19 [main] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1509 ms
+""2019-11-14 09:35:20 [main] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+""2019-11-14 09:35:20 [main] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+""2019-11-14 09:35:20 [main] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'formContentFilter' to: [/*]
+""2019-11-14 09:35:20 [main] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
+""2019-11-14 09:35:20 [main] INFO  o.s.b.w.s.DelegatingFilterProxyRegistrationBean - Mapping filter: 'springSecurityFilterChain' to: [/*]
+""2019-11-14 09:35:20 [main] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'jwtAuthenticationFilter' to: [/*]
+""2019-11-14 09:35:20 [main] INFO  o.s.b.w.s.ServletRegistrationBean - Servlet dispatcherServlet mapped to [/]
+""2019-11-14 09:35:20 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@637791d, org.springframework.security.web.context.SecurityContextPersistenceFilter@307e4c44, org.springframework.security.web.header.HeaderWriterFilter@4b862408, org.springframework.web.filter.CorsFilter@3b0c3951, org.springframework.security.web.authentication.logout.LogoutFilter@16a5c7e4, org.springframework.security.oauth2.client.web.OAuth2AuthorizationRequestRedirectFilter@469a7575, org.springframework.security.oauth2.client.web.OAuth2LoginAuthenticationFilter@4351ed61, com.gaogao.cucaishop.adm.security.JwtAuthenticationFilter@124dac75, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@500051c5, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@10244722, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@60f77af, org.springframework.security.web.session.SessionManagementFilter@6e829e50, org.springframework.security.web.access.ExceptionTranslationFilter@4d09cade, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@704067c6]
+""2019-11-14 09:35:20 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+""2019-11-14 09:35:21 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8088 (http) with context path ''
+""2019-11-14 09:35:21 [main] INFO  c.g.cucaishop.CuCaiShopApplication - Started CuCaiShopApplication in 3.697 seconds (JVM running for 4.972)
+""2019-11-14 09:36:09 [Thread-8] INFO  o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+""2019-11-14 09:36:19 [main] INFO  c.g.cucaishop.CuCaiShopApplication - Starting CuCaiShopApplication on DLAP-0042 with PID 16932 (E:\Mirae\cu-cai-shop\out\production\classes started by Administrator in E:\Mirae\cu-cai-shop)
+""2019-11-14 09:36:19 [main] INFO  c.g.cucaishop.CuCaiShopApplication - No active profile set, falling back to default profiles: default
+""2019-11-14 09:36:21 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8088 (http)
+""2019-11-14 09:36:21 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+""2019-11-14 09:36:21 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/9.0.12
+""2019-11-14 09:36:21 [main] INFO  o.a.c.core.AprLifecycleListener - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk1.8.0_211\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files\TortoiseSVN\bin;C:\Program Files\Java\jdk1.8.0_211\bin;C:\Program Files\Java\jre1.8.0_211\bin;C:\Program Files\nodejs\;C:\Program Files (x86)\Yarn\bin\;C:\Program Files\Git\cmd;C:\Users\Administrator\AppData\Local\Yarn\bin;;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\Administrator\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\Administrator\AppData\Local\Microsoft\WindowsApps;;.]
+""2019-11-14 09:36:21 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+""2019-11-14 09:36:21 [main] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1709 ms
+""2019-11-14 09:36:22 [main] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+""2019-11-14 09:36:22 [main] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+""2019-11-14 09:36:22 [main] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'formContentFilter' to: [/*]
+""2019-11-14 09:36:22 [main] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
+""2019-11-14 09:36:22 [main] INFO  o.s.b.w.s.DelegatingFilterProxyRegistrationBean - Mapping filter: 'springSecurityFilterChain' to: [/*]
+""2019-11-14 09:36:22 [main] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'jwtAuthenticationFilter' to: [/*]
+""2019-11-14 09:36:22 [main] INFO  o.s.b.w.s.ServletRegistrationBean - Servlet dispatcherServlet mapped to [/]
+""2019-11-14 09:36:22 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@628b819d, org.springframework.security.web.context.SecurityContextPersistenceFilter@1e84f3c8, org.springframework.security.web.header.HeaderWriterFilter@270d43a7, org.springframework.web.filter.CorsFilter@478b0739, org.springframework.security.web.authentication.logout.LogoutFilter@58aa10f4, org.springframework.security.oauth2.client.web.OAuth2AuthorizationRequestRedirectFilter@7066363, org.springframework.security.oauth2.client.web.OAuth2LoginAuthenticationFilter@75b38c36, com.gaogao.cucaishop.adm.security.JwtAuthenticationFilter@56928e17, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7b2ccba5, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@75fd65c, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@2cca611f, org.springframework.security.web.session.SessionManagementFilter@41ccb3b9, org.springframework.security.web.access.ExceptionTranslationFilter@3e8799f, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@32120956]
+""2019-11-14 09:36:22 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+""2019-11-14 09:36:23 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8088 (http) with context path ''
+""2019-11-14 09:36:23 [main] INFO  c.g.cucaishop.CuCaiShopApplication - Started CuCaiShopApplication in 4.021 seconds (JVM running for 5.682)
+""2019-11-14 09:36:30 [http-nio-8088-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+""2019-11-14 09:36:30 [http-nio-8088-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+""2019-11-14 09:36:30 [http-nio-8088-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 15 ms
+""2019-11-14 09:36:34 [http-nio-8088-exec-2] ERROR c.g.c.a.s.JwtAuthenticationEntryPoint - Responding with unauthorized error. Message - Full authentication is required to access this resource
+""2019-11-14 09:39:33 [http-nio-8088-exec-5] ERROR c.g.c.a.s.JwtAuthenticationEntryPoint - Responding with unauthorized error. Message - Full authentication is required to access this resource
+""2019-11-14 09:39:37 [http-nio-8088-exec-6] ERROR c.g.c.a.s.JwtAuthenticationEntryPoint - Responding with unauthorized error. Message - Full authentication is required to access this resource
+""2019-11-14 09:54:28 [Thread-10] INFO  o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+""2019-11-14 09:54:38 [main] INFO  c.g.cucaishop.CuCaiShopApplication - Starting CuCaiShopApplication on DLAP-0042 with PID 10108 (E:\Mirae\cu-cai-shop\out\production\classes started by Administrator in E:\Mirae\cu-cai-shop)
+""2019-11-14 09:54:38 [main] INFO  c.g.cucaishop.CuCaiShopApplication - No active profile set, falling back to default profiles: default
+""2019-11-14 09:54:40 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8088 (http)
+""2019-11-14 09:54:40 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+""2019-11-14 09:54:40 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/9.0.12
+""2019-11-14 09:54:40 [main] INFO  o.a.c.core.AprLifecycleListener - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk1.8.0_211\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files\TortoiseSVN\bin;C:\Program Files\Java\jdk1.8.0_211\bin;C:\Program Files\Java\jre1.8.0_211\bin;C:\Program Files\nodejs\;C:\Program Files (x86)\Yarn\bin\;C:\Program Files\Git\cmd;C:\Users\Administrator\AppData\Local\Yarn\bin;;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\Administrator\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\Administrator\AppData\Local\Microsoft\WindowsApps;;.]
+""2019-11-14 09:54:40 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+""2019-11-14 09:54:40 [main] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1619 ms
+""2019-11-14 09:54:40 [main] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+""2019-11-14 09:54:40 [main] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+""2019-11-14 09:54:40 [main] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'formContentFilter' to: [/*]
+""2019-11-14 09:54:40 [main] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
+""2019-11-14 09:54:40 [main] INFO  o.s.b.w.s.DelegatingFilterProxyRegistrationBean - Mapping filter: 'springSecurityFilterChain' to: [/*]
+""2019-11-14 09:54:40 [main] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'jwtAuthenticationFilter' to: [/*]
+""2019-11-14 09:54:40 [main] INFO  o.s.b.w.s.ServletRegistrationBean - Servlet dispatcherServlet mapped to [/]
+""2019-11-14 09:54:41 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@f238e4f, org.springframework.security.web.context.SecurityContextPersistenceFilter@1095d23a, org.springframework.security.web.header.HeaderWriterFilter@76ff68c5, org.springframework.web.filter.CorsFilter@3b24087d, org.springframework.security.web.authentication.logout.LogoutFilter@61615b4a, org.springframework.security.oauth2.client.web.OAuth2AuthorizationRequestRedirectFilter@588545ac, org.springframework.security.oauth2.client.web.OAuth2LoginAuthenticationFilter@2b08772d, com.gaogao.cucaishop.adm.security.JwtAuthenticationFilter@43c57161, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@6393bf8b, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4b862408, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@75fe1619, org.springframework.security.web.session.SessionManagementFilter@3635099, org.springframework.security.web.access.ExceptionTranslationFilter@4bc59b27, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@5d878b25]
+""2019-11-14 09:54:41 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+""2019-11-14 09:54:41 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8088 (http) with context path ''
+""2019-11-14 09:54:41 [main] INFO  c.g.cucaishop.CuCaiShopApplication - Started CuCaiShopApplication in 3.78 seconds (JVM running for 5.34)
+""2019-11-14 10:10:21 [http-nio-8088-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+""2019-11-14 10:10:21 [http-nio-8088-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+""2019-11-14 10:10:21 [http-nio-8088-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 12 ms
+""2019-11-14 10:10:27 [http-nio-8088-exec-2] ERROR c.g.c.a.s.JwtAuthenticationEntryPoint - Responding with unauthorized error. Message - Full authentication is required to access this resource
+""2019-11-14 10:23:04 [http-nio-8088-exec-6] ERROR c.g.c.a.s.JwtAuthenticationEntryPoint - Responding with unauthorized error. Message - Full authentication is required to access this resource
+""2019-11-14 10:29:50 [http-nio-8088-exec-9] ERROR c.g.c.a.s.JwtAuthenticationEntryPoint - Responding with unauthorized error. Message - Full authentication is required to access this resource
+""2019-11-14 10:29:55 [http-nio-8088-exec-3] ERROR c.g.c.a.s.JwtAuthenticationEntryPoint - Responding with unauthorized error. Message - Full authentication is required to access this resource
+""2019-11-14 10:30:14 [http-nio-8088-exec-5] ERROR c.g.c.a.s.JwtAuthenticationEntryPoint - Responding with unauthorized error. Message - Full authentication is required to access this resource
+""2019-11-14 10:41:21 [Thread-10] INFO  o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+""2019-11-14 10:41:25 [main] INFO  c.g.cucaishop.CuCaiShopApplication - Starting CuCaiShopApplication on DLAP-0042 with PID 11960 (E:\Mirae\cu-cai-shop\out\production\classes started by Administrator in E:\Mirae\cu-cai-shop)
+""2019-11-14 10:41:25 [main] INFO  c.g.cucaishop.CuCaiShopApplication - No active profile set, falling back to default profiles: default
+""2019-11-14 10:41:26 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8088 (http)
+""2019-11-14 10:41:26 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+""2019-11-14 10:41:26 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/9.0.12
+""2019-11-14 10:41:26 [main] INFO  o.a.c.core.AprLifecycleListener - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk1.8.0_211\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files\TortoiseSVN\bin;C:\Program Files\Java\jdk1.8.0_211\bin;C:\Program Files\Java\jre1.8.0_211\bin;C:\Program Files\nodejs\;C:\Program Files (x86)\Yarn\bin\;C:\Program Files\Git\cmd;C:\Users\Administrator\AppData\Local\Yarn\bin;;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\Administrator\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\Administrator\AppData\Local\Microsoft\WindowsApps;;.]
+""2019-11-14 10:41:26 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+""2019-11-14 10:41:26 [main] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1412 ms
+""2019-11-14 10:41:27 [main] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+""2019-11-14 10:41:27 [main] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+""2019-11-14 10:41:27 [main] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'formContentFilter' to: [/*]
+""2019-11-14 10:41:27 [main] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
+""2019-11-14 10:41:27 [main] INFO  o.s.b.w.s.DelegatingFilterProxyRegistrationBean - Mapping filter: 'springSecurityFilterChain' to: [/*]
+""2019-11-14 10:41:27 [main] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'jwtAuthenticationFilter' to: [/*]
+""2019-11-14 10:41:27 [main] INFO  o.s.b.w.s.ServletRegistrationBean - Servlet dispatcherServlet mapped to [/]
+""2019-11-14 10:41:27 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@626d2016, org.springframework.security.web.context.SecurityContextPersistenceFilter@285583d4, org.springframework.security.web.header.HeaderWriterFilter@6a32191e, org.springframework.web.filter.CorsFilter@2d5a1588, org.springframework.security.web.authentication.logout.LogoutFilter@7f6329cb, org.springframework.security.oauth2.client.web.OAuth2AuthorizationRequestRedirectFilter@648c5fb3, org.springframework.security.oauth2.client.web.OAuth2LoginAuthenticationFilter@47b33e07, com.gaogao.cucaishop.adm.security.JwtAuthenticationFilter@1319bc2a, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7f85217c, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@6b649efa, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@4f116ca2, org.springframework.security.web.session.SessionManagementFilter@9accff0, org.springframework.security.web.access.ExceptionTranslationFilter@134f8ef6, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@4872669f]
+""2019-11-14 10:41:27 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+""2019-11-14 10:41:27 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8088 (http) with context path ''
+""2019-11-14 10:41:27 [main] INFO  c.g.cucaishop.CuCaiShopApplication - Started CuCaiShopApplication in 3.255 seconds (JVM running for 4.391)
+""2019-11-14 10:41:40 [http-nio-8088-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+""2019-11-14 10:41:40 [http-nio-8088-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+""2019-11-14 10:41:40 [http-nio-8088-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 10 ms
+""2019-11-14 10:41:41 [http-nio-8088-exec-2] ERROR c.g.c.a.s.JwtAuthenticationEntryPoint - Responding with unauthorized error. Message - Full authentication is required to access this resource
+""2019-11-14 10:44:16 [Thread-9] INFO  o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+""2019-11-14 10:44:23 [main] INFO  c.g.cucaishop.CuCaiShopApplication - Starting CuCaiShopApplication on DLAP-0042 with PID 19388 (E:\Mirae\cu-cai-shop\out\production\classes started by Administrator in E:\Mirae\cu-cai-shop)
+""2019-11-14 10:44:23 [main] INFO  c.g.cucaishop.CuCaiShopApplication - No active profile set, falling back to default profiles: default
+""2019-11-14 10:44:25 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8088 (http)
+""2019-11-14 10:44:25 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+""2019-11-14 10:44:25 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/9.0.12
+""2019-11-14 10:44:25 [main] INFO  o.a.c.core.AprLifecycleListener - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk1.8.0_211\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files\TortoiseSVN\bin;C:\Program Files\Java\jdk1.8.0_211\bin;C:\Program Files\Java\jre1.8.0_211\bin;C:\Program Files\nodejs\;C:\Program Files (x86)\Yarn\bin\;C:\Program Files\Git\cmd;C:\Users\Administrator\AppData\Local\Yarn\bin;;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\Administrator\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\Administrator\AppData\Local\Microsoft\WindowsApps;;.]
+""2019-11-14 10:44:25 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+""2019-11-14 10:44:25 [main] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1620 ms
+""2019-11-14 10:44:26 [main] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+""2019-11-14 10:44:26 [main] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+""2019-11-14 10:44:26 [main] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'formContentFilter' to: [/*]
+""2019-11-14 10:44:26 [main] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
+""2019-11-14 10:44:26 [main] INFO  o.s.b.w.s.DelegatingFilterProxyRegistrationBean - Mapping filter: 'springSecurityFilterChain' to: [/*]
+""2019-11-14 10:44:26 [main] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'jwtAuthenticationFilter' to: [/*]
+""2019-11-14 10:44:26 [main] INFO  o.s.b.w.s.ServletRegistrationBean - Servlet dispatcherServlet mapped to [/]
+""2019-11-14 10:44:26 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@6b649efa, org.springframework.security.web.context.SecurityContextPersistenceFilter@484149eb, org.springframework.security.web.header.HeaderWriterFilter@30db5536, org.springframework.web.filter.CorsFilter@65ef48f2, org.springframework.security.web.authentication.logout.LogoutFilter@1de4285e, org.springframework.security.oauth2.client.web.OAuth2AuthorizationRequestRedirectFilter@1039bfc4, org.springframework.security.oauth2.client.web.OAuth2LoginAuthenticationFilter@7f85217c, com.gaogao.cucaishop.adm.security.JwtAuthenticationFilter@74f827ad, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@61874b9d, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1d98daa0, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@36068727, org.springframework.security.web.session.SessionManagementFilter@136ccbfe, org.springframework.security.web.access.ExceptionTranslationFilter@49f3ff41, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@3db432c2]
+""2019-11-14 10:44:26 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+""2019-11-14 10:44:26 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8088 (http) with context path ''
+""2019-11-14 10:44:26 [main] INFO  c.g.cucaishop.CuCaiShopApplication - Started CuCaiShopApplication in 3.802 seconds (JVM running for 5.373)
+""2019-11-14 10:44:38 [http-nio-8088-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+""2019-11-14 10:44:38 [http-nio-8088-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+""2019-11-14 10:44:38 [http-nio-8088-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 14 ms
+""2019-11-14 10:44:38 [http-nio-8088-exec-2] ERROR c.g.c.a.s.JwtAuthenticationEntryPoint - Responding with unauthorized error. Message - Full authentication is required to access this resource
+""2019-11-14 10:52:12 [http-nio-8088-exec-6] ERROR c.g.c.a.s.JwtAuthenticationEntryPoint - Responding with unauthorized error. Message - Full authentication is required to access this resource
+""2019-11-14 11:01:53 [http-nio-8088-exec-10] ERROR c.g.c.a.s.JwtAuthenticationEntryPoint - Responding with unauthorized error. Message - Full authentication is required to access this resource
+""2019-11-14 14:59:41 [Thread-9] INFO  o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+""2019-11-14 14:59:45 [main] INFO  c.g.cucaishop.CuCaiShopApplication - Starting CuCaiShopApplication on DLAP-0042 with PID 17080 (E:\Mirae\cu-cai-shop\out\production\classes started by Administrator in E:\Mirae\cu-cai-shop)
+""2019-11-14 14:59:45 [main] INFO  c.g.cucaishop.CuCaiShopApplication - No active profile set, falling back to default profiles: default
+""2019-11-14 14:59:46 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8088 (http)
+""2019-11-14 14:59:46 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+""2019-11-14 14:59:46 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/9.0.12
+""2019-11-14 14:59:46 [main] INFO  o.a.c.core.AprLifecycleListener - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk1.8.0_211\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files\TortoiseSVN\bin;C:\Program Files\Java\jdk1.8.0_211\bin;C:\Program Files\Java\jre1.8.0_211\bin;C:\Program Files\nodejs\;C:\Program Files (x86)\Yarn\bin\;C:\Program Files\Git\cmd;C:\Users\Administrator\AppData\Local\Yarn\bin;;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\Administrator\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\Administrator\AppData\Local\Microsoft\WindowsApps;;.]
+""2019-11-14 14:59:46 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+""2019-11-14 14:59:46 [main] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1437 ms
+""2019-11-14 14:59:47 [main] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+""2019-11-14 14:59:47 [main] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+""2019-11-14 14:59:47 [main] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'formContentFilter' to: [/*]
+""2019-11-14 14:59:47 [main] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
+""2019-11-14 14:59:47 [main] INFO  o.s.b.w.s.DelegatingFilterProxyRegistrationBean - Mapping filter: 'springSecurityFilterChain' to: [/*]
+""2019-11-14 14:59:47 [main] INFO  o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'jwtAuthenticationFilter' to: [/*]
+""2019-11-14 14:59:47 [main] INFO  o.s.b.w.s.ServletRegistrationBean - Servlet dispatcherServlet mapped to [/]
+""2019-11-14 14:59:47 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@3946075, org.springframework.security.web.context.SecurityContextPersistenceFilter@14168e1, org.springframework.security.web.header.HeaderWriterFilter@70029d2d, org.springframework.web.filter.CorsFilter@122635ef, org.springframework.security.web.authentication.logout.LogoutFilter@3db432c2, org.springframework.security.oauth2.client.web.OAuth2AuthorizationRequestRedirectFilter@38d80d65, org.springframework.security.oauth2.client.web.OAuth2LoginAuthenticationFilter@5403799b, com.gaogao.cucaishop.adm.security.JwtAuthenticationFilter@111d5c97, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1e225820, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@6003ad65, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@2ac519dc, org.springframework.security.web.session.SessionManagementFilter@709f0202, org.springframework.security.web.access.ExceptionTranslationFilter@1e3ff233, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@348137e8]
+""2019-11-14 14:59:47 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+""2019-11-14 14:59:48 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8088 (http) with context path ''
+""2019-11-14 14:59:48 [main] INFO  c.g.cucaishop.CuCaiShopApplication - Started CuCaiShopApplication in 3.633 seconds (JVM running for 4.89)
+""2019-11-14 15:00:12 [http-nio-8088-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+""2019-11-14 15:00:12 [http-nio-8088-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+""2019-11-14 15:00:12 [http-nio-8088-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 16 ms
+""2019-11-14 15:00:14 [http-nio-8088-exec-2] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+""2019-11-14 15:00:15 [http-nio-8088-exec-2] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+""2019-11-14 15:00:15 [http-nio-8088-exec-2] ERROR o.s.s.o.c.w.OAuth2LoginAuthenticationFilter - An internal error occurred while trying to authenticate the user.
+"org.springframework.security.authentication.InternalAuthenticationServiceException: 
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Unknown column 'usr.role_id' in 'where clause'
+### The error may exist in file [E:\Mirae\cu-cai-shop\out\production\resources\mappers\adm\UserMapper.xml]
+### The error may involve com.gaogao.cucaishop.adm.mappers.UserMapper.findByUserName-Inline
+### The error occurred while setting parameters
+### SQL: select usr.user_id,usr.user_name,usr.password,usr.full_name         from users usr,roles rol         where usr.role_id = rol.role_id and usr.username = ?
+### Cause: java.sql.SQLSyntaxErrorException: Unknown column 'usr.role_id' in 'where clause'
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Unknown column 'usr.role_id' in 'where clause'
+	at com.gaogao.cucaishop.adm.service.CustomOAuth2UserService.loadUser(CustomOAuth2UserService.java:63)
+	at org.springframework.security.oauth2.client.authentication.OAuth2LoginAuthenticationProvider.authenticate(OAuth2LoginAuthenticationProvider.java:116)
+	at org.springframework.security.authentication.ProviderManager.authenticate(ProviderManager.java:174)
+	at org.springframework.security.oauth2.client.web.OAuth2LoginAuthenticationFilter.attemptAuthentication(OAuth2LoginAuthenticationFilter.java:186)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:212)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.oauth2.client.web.OAuth2AuthorizationRequestRedirectFilter.doFilterInternal(OAuth2AuthorizationRequestRedirectFilter.java:160)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:96)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:66)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:105)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:56)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:215)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:178)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:357)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:270)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:92)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:490)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:770)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1415)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.sql.SQLSyntaxErrorException: Unknown column 'usr.role_id' in 'where clause'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:970)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.execute(ClientPreparedStatement.java:387)
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.execute(HikariProxyPreparedStatement.java)
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.query(PreparedStatementHandler.java:63)
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.query(RoutingStatementHandler.java:79)
+	at org.apache.ibatis.executor.SimpleExecutor.doQuery(SimpleExecutor.java:63)
+	at org.apache.ibatis.executor.BaseExecutor.queryFromDatabase(BaseExecutor.java:326)
+	at org.apache.ibatis.executor.BaseExecutor.query(BaseExecutor.java:156)
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:109)
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:83)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:148)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:141)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectOne(DefaultSqlSession.java:77)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:433)
+	at com.sun.proxy.$Proxy63.selectOne(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.selectOne(SqlSessionTemplate.java:166)
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:83)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:59)
+	at com.sun.proxy.$Proxy64.findByUserName(Unknown Source)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:343)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:198)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:139)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:212)
+	at com.sun.proxy.$Proxy66.findByUserName(Unknown Source)
+	at com.gaogao.cucaishop.adm.service.CustomOAuth2UserService.processOAuth2User(CustomOAuth2UserService.java:73)
+	at com.gaogao.cucaishop.adm.service.CustomOAuth2UserService.loadUser(CustomOAuth2UserService.java:60)
+	... 59 common frames omitted
+"2019-11-14 15:01:15 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m415ms380µs800ns).
+""2019-11-14 15:03:13 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m27s970ms711µs100ns).
+""2019-11-14 15:06:02 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=2m48s553ms812µs700ns).
+""2019-11-14 15:06:02 [http-nio-8088-exec-5] ERROR o.s.s.o.c.w.OAuth2LoginAuthenticationFilter - An internal error occurred while trying to authenticate the user.
+"org.springframework.security.authentication.InternalAuthenticationServiceException: 
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Unknown column 'usr.role_id' in 'where clause'
+### The error may exist in file [E:\Mirae\cu-cai-shop\out\production\resources\mappers\adm\UserMapper.xml]
+### The error may involve com.gaogao.cucaishop.adm.mappers.UserMapper.findByUserName-Inline
+### The error occurred while setting parameters
+### SQL: select usr.user_id,usr.user_name,usr.password,usr.full_name         from users usr,roles rol         where usr.role_id = rol.role_id and usr.username = ?
+### Cause: java.sql.SQLSyntaxErrorException: Unknown column 'usr.role_id' in 'where clause'
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Unknown column 'usr.role_id' in 'where clause'
+	at com.gaogao.cucaishop.adm.service.CustomOAuth2UserService.loadUser(CustomOAuth2UserService.java:63)
+	at org.springframework.security.oauth2.client.authentication.OAuth2LoginAuthenticationProvider.authenticate(OAuth2LoginAuthenticationProvider.java:116)
+	at org.springframework.security.authentication.ProviderManager.authenticate(ProviderManager.java:174)
+	at org.springframework.security.oauth2.client.web.OAuth2LoginAuthenticationFilter.attemptAuthentication(OAuth2LoginAuthenticationFilter.java:186)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:212)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.oauth2.client.web.OAuth2AuthorizationRequestRedirectFilter.doFilterInternal(OAuth2AuthorizationRequestRedirectFilter.java:160)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:96)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:66)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:105)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:56)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:215)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:178)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:357)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:270)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:92)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:490)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:770)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1415)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.sql.SQLSyntaxErrorException: Unknown column 'usr.role_id' in 'where clause'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:970)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.execute(ClientPreparedStatement.java:387)
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.execute(HikariProxyPreparedStatement.java)
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.query(PreparedStatementHandler.java:63)
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.query(RoutingStatementHandler.java:79)
+	at org.apache.ibatis.executor.SimpleExecutor.doQuery(SimpleExecutor.java:63)
+	at org.apache.ibatis.executor.BaseExecutor.queryFromDatabase(BaseExecutor.java:326)
+	at org.apache.ibatis.executor.BaseExecutor.query(BaseExecutor.java:156)
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:109)
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:83)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:148)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:141)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectOne(DefaultSqlSession.java:77)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:433)
+	at com.sun.proxy.$Proxy63.selectOne(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.selectOne(SqlSessionTemplate.java:166)
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:83)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:59)
+	at com.sun.proxy.$Proxy64.findByUserName(Unknown Source)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:343)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:198)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:139)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:212)
+	at com.sun.proxy.$Proxy66.findByUserName(Unknown Source)
+	at com.gaogao.cucaishop.adm.service.CustomOAuth2UserService.processOAuth2User(CustomOAuth2UserService.java:73)
+	at com.gaogao.cucaishop.adm.service.CustomOAuth2UserService.loadUser(CustomOAuth2UserService.java:60)
+	... 59 common frames omitted
+"2019-11-14 15:24:02 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m22s865ms839µs300ns).
+""2019-11-14 15:28:34 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=4m31s975ms917µs400ns).
+""2019-11-14 15:28:34 [http-nio-8088-exec-10] ERROR o.s.s.o.c.w.OAuth2LoginAuthenticationFilter - An internal error occurred while trying to authenticate the user.
+"org.springframework.security.authentication.InternalAuthenticationServiceException: 
+### Error querying database.  Cause: java.sql.SQLSyntaxErrorException: Unknown column 'usr.role_id' in 'where clause'
+### The error may exist in file [E:\Mirae\cu-cai-shop\out\production\resources\mappers\adm\UserMapper.xml]
+### The error may involve com.gaogao.cucaishop.adm.mappers.UserMapper.findByUserName-Inline
+### The error occurred while setting parameters
+### SQL: select usr.user_id,usr.user_name,usr.password,usr.full_name         from users usr,roles rol         where usr.role_id = rol.role_id and usr.username = ?
+### Cause: java.sql.SQLSyntaxErrorException: Unknown column 'usr.role_id' in 'where clause'
+; bad SQL grammar []; nested exception is java.sql.SQLSyntaxErrorException: Unknown column 'usr.role_id' in 'where clause'
+	at com.gaogao.cucaishop.adm.service.CustomOAuth2UserService.loadUser(CustomOAuth2UserService.java:63)
+	at org.springframework.security.oauth2.client.authentication.OAuth2LoginAuthenticationProvider.authenticate(OAuth2LoginAuthenticationProvider.java:116)
+	at org.springframework.security.authentication.ProviderManager.authenticate(ProviderManager.java:174)
+	at org.springframework.security.oauth2.client.web.OAuth2LoginAuthenticationFilter.attemptAuthentication(OAuth2LoginAuthenticationFilter.java:186)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:212)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.oauth2.client.web.OAuth2AuthorizationRequestRedirectFilter.doFilterInternal(OAuth2AuthorizationRequestRedirectFilter.java:160)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:96)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:66)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:105)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:56)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:215)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:178)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:357)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:270)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:92)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:490)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:770)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1415)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.sql.SQLSyntaxErrorException: Unknown column 'usr.role_id' in 'where clause'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:970)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.execute(ClientPreparedStatement.java:387)
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.execute(HikariProxyPreparedStatement.java)
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.query(PreparedStatementHandler.java:63)
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.query(RoutingStatementHandler.java:79)
+	at org.apache.ibatis.executor.SimpleExecutor.doQuery(SimpleExecutor.java:63)
+	at org.apache.ibatis.executor.BaseExecutor.queryFromDatabase(BaseExecutor.java:326)
+	at org.apache.ibatis.executor.BaseExecutor.query(BaseExecutor.java:156)
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:109)
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:83)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:148)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:141)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectOne(DefaultSqlSession.java:77)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:433)
+	at com.sun.proxy.$Proxy63.selectOne(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.selectOne(SqlSessionTemplate.java:166)
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:83)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:59)
+	at com.sun.proxy.$Proxy64.findByUserName(Unknown Source)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:343)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:198)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:139)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:212)
+	at com.sun.proxy.$Proxy66.findByUserName(Unknown Source)
+	at com.gaogao.cucaishop.adm.service.CustomOAuth2UserService.processOAuth2User(CustomOAuth2UserService.java:73)
+	at com.gaogao.cucaishop.adm.service.CustomOAuth2UserService.loadUser(CustomOAuth2UserService.java:60)
+	... 59 common frames omitted
+"2019-11-14 17:34:00 [Thread-10] INFO  o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+""2019-11-14 17:34:00 [Thread-10] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+""2019-11-14 17:34:00 [Thread-10] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
 "

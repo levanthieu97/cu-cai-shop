@@ -32,7 +32,7 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Autowired
-    private JwtAuthenticationEntryPoint jwtAuthenticationEntryPoint;
+        private JwtAuthenticationEntryPoint jwtAuthenticationEntryPoint;
 
     @Autowired
     private MyUserDetailsService myUserDetailsService;
@@ -80,7 +80,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
                 .and()
                 .csrf().disable()
-                .formLogin().disable()
                 .httpBasic().disable().exceptionHandling()
                 .authenticationEntryPoint(jwtAuthenticationEntryPoint)
                 .and()
@@ -96,7 +95,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                         "/**/*.css",
                         "/**/*.js")
                 .permitAll()
-                //api
+                .antMatchers("/auth/**", "/oauth2/**")
+                .permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .oauth2Login()

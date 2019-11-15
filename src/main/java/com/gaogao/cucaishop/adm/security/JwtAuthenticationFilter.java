@@ -22,10 +22,10 @@ import java.io.IOException;
 
 public class JwtAuthenticationFilter extends OncePerRequestFilter {
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(JwtAuthenticationFilter.class);
+    private static final Logger logger = LoggerFactory.getLogger(JwtAuthenticationFilter.class);
 
-    public static final String REQ_USR              = "jwtUser";
-    public static final String REQ_HEADER_AUTH      = "Authorization";
+    public static final String REQ_USR = "jwtUser";
+    public static final String REQ_HEADER_AUTH = "Authorization";
 
     @Autowired
     private JwtTokenProvider tokenProvider;
@@ -50,20 +50,15 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
                 String jwtUser = tokenProvider.getJwtUser(jwt);
                 request.setAttribute(REQ_USR, jwtUser);
 
-                UserDetails  userDetails = userDetailsService.loadUserByUsername(jwtUser);
+                UserDetails userDetails = userDetailsService.loadUserByUsername(jwtUser);
                 UsernamePasswordAuthenticationToken authentication = new UsernamePasswordAuthenticationToken(userDetails, null, userDetails.getAuthorities());
                 authentication.setDetails(new WebAuthenticationDetailsSource().buildDetails(request));
 
                 SecurityContextHolder.getContext().setAuthentication(authentication);
             }
-//            else {
-//                response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
-//                return;
-//            }
         } catch (Exception ex) {
             logger.error("Could not set user authentication in security context", ex);
-//            response.setStatus(HttpServletResponse.SC_NOT_ACCEPTABLE);
-//            return;
+
         }
         filterChain.doFilter(request, response);
     }

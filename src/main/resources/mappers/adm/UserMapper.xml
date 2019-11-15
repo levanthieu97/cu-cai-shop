@@ -6,7 +6,8 @@
         <id column="user_id" property="userId"/>
         <result column="user_name" property="userName"/>
         <result column="password" property="password"/>
-        <result column="full_name" property="fullName"/>
+        <result column="first_name" property="firstName"/>
+        <result column="last_name" property="lastName"/>
         <result column="gender" property="gender"/>
         <result column="phone" property="phone"/>
         <result column="have_shop" property="haveShop"/>
@@ -28,7 +29,9 @@
     </select>
     
     <insert id="registerNewUser" useGeneratedKeys="true">
-        
+        insert into users(user_name, password, first_name, last_name, gender, phone, is_active,
+        create_date, update_date, image_url, provider_id)
+        values (#{user_name})
     </insert>
     
     <update id="updateExistingUser" parameterType="map">

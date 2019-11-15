@@ -26,8 +26,6 @@ so that it can later compare it with the state returned from the OAuth2 provider
 
 - We’ll be storing the state as well as the 'redirect_uri' in a short-lived cookie.
 The following class provides functionality for storing the authorization request in cookies and retrieving it.
-
-
  */
 
 @Component

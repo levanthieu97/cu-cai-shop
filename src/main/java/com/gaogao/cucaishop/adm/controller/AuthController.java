@@ -41,7 +41,7 @@ public class AuthController {
     }
 
     // @Valid -> annotation Validation check @NotNull,@Min,@NotBlank,...
-    @PostMapping("sign-in")
+    @PostMapping("/sign-in")
     public ResponseObject authenticateUser(@Valid @RequestBody LoginRequest loginRequest){
         ResponseObject responseObject = new ResponseObject();
 
@@ -61,6 +61,9 @@ public class AuthController {
         }
         return responseObject;
     }
+
+
+
 
 
 
