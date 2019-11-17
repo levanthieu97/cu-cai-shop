@@ -4,11 +4,11 @@
 
     <resultMap id="userResultMap" type="com.gaogao.cucaishop.home.models.Users">
         <id column="user_id" property="userId"/>
-        <result column="user_name" property="userName"/>
         <result column="password" property="password"/>
         <result column="first_name" property="firstName"/>
         <result column="last_name" property="lastName"/>
         <result column="gender" property="gender"/>
+        <result column="email" property="email"/>
         <result column="phone" property="phone"/>
         <result column="have_shop" property="haveShop"/>
         <result column="is_active" property="isActive"/>
@@ -16,22 +16,28 @@
         <result column="update_date" property="updateDate"/>
         <result column="image_url" property="imageUrl"/>
         <result column="provider_id" property="providerId"/>
+        <result column="auth_provider" property="provider"/>
         <collection property="roles" ofType="com.gaogao.cucaishop.home.models.Roles">
             <id column="role_id" property="roleId"/>
             <result column="role_name" property="roleName"/>
         </collection>
     </resultMap>
 
-    <select id="findByUserName" resultMap="userResultMap" parameterType="string">
-        select usr.user_id,usr.user_name,usr.password,usr.full_name
-        from users usr,roles rol
-        where usr.role_id = rol.role_id and usr.username = #{username}
+    <select id="findByEmail" resultMap="userResultMap" parameterType="string">
+        select usr.user_id,usr.email,usr.last_name,usr.first_name,usr.auth_provider,usr.provider_id
+        from users usr
+        where usr.email = #{email}
     </select>
     
     <insert id="registerNewUser" useGeneratedKeys="true">
-        insert into users(user_name, password, first_name, last_name, gender, phone, is_active,
+        insert into users(user_id,email, password, first_name, last_name, gender, phone, is_active,
         create_date, update_date, image_url, provider_id)
-        values (#{user_name})
+        values (#{userId},#{email},#{password},#{firstName},#{lastName},#{gender},#{phone},#{createDate},#{updateDate},#{providerId})
+    </insert>
+
+    <insert id="saveInfoBySocial" parameterType="map" useGeneratedKeys="true" keyProperty="userId" keyColumn="user_id">
+        insert into users(user_id,first_name,last_name,email,provider_id,image_url,create_date,role_id,auth_provider)
+        values (#{userId},#{firstName},#{lastName},#{email},#{providerId},#{imageUrl},#{createDate},#{roleId},#{provider})
     </insert>
     
     <update id="updateExistingUser" parameterType="map">

@@ -8,8 +8,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
-import java.util.Optional;
-
 @Service
 public class UserService {
     private static final Logger LOGGER = LoggerFactory.getLogger(UserService.class);
@@ -18,13 +16,13 @@ public class UserService {
     private UserMapper userMapper;
 
 
-    public Users loginUser(String username) {
+    public Users loginUser(String email) {
         Users users = null;
         try {
-            users = userMapper.findByUserName(username).orElseThrow(()->
-                    new UsernameNotFoundException("User not found with username: " + username));
+            users = userMapper.findByEmail(email);
         } catch (Exception e) {
             LOGGER.error("Fail when call loginUser. ", e);
+            throw new UsernameNotFoundException("User not found with username: " + email);
         }
         return users;
     }

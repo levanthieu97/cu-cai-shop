@@ -25,11 +25,7 @@ public class JwtTokenProvider {
         Date expireDate = new DateTime().plus(appProperties.getAuth().getTokenExpiration()).toDate();
         JwtUser jwtUser = (JwtUser) authentication.getPrincipal();
         return Jwts.builder()
-                .setId(jwtUser.getUserId())
                 .setSubject(jwtUser.getUsername())
-                .claim("email", jwtUser.getEmail())
-                .claim("phone", jwtUser.getPhone())
-                .claim("auth", jwtUser.getAuthorities())
                 .setIssuedAt(new Date())
                 .setExpiration(expireDate)
                 .signWith(SignatureAlgorithm.HS512, appProperties.getAuth().getTokenSecret())
