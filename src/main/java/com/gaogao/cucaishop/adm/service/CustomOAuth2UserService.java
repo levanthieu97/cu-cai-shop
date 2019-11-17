@@ -7,8 +7,11 @@ import com.gaogao.cucaishop.adm.social.OAuth2AuthenticationProcessingException;
 import com.gaogao.cucaishop.adm.social.OAuth2UserInfo;
 import com.gaogao.cucaishop.adm.social.OAuth2UserInfoFactory;
 import com.gaogao.cucaishop.home.models.Users;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.InternalAuthenticationServiceException;
+import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.oauth2.client.userinfo.DefaultOAuth2UserService;
 import org.springframework.security.oauth2.client.userinfo.OAuth2UserRequest;
 import org.springframework.security.oauth2.core.OAuth2AuthenticationException;
@@ -24,8 +27,10 @@ public class CustomOAuth2UserService extends DefaultOAuth2UserService {
     @Autowired
     UserMapper userMapper;
 
+    private static final Logger LOGGER = LoggerFactory.getLogger(CustomOAuth2UserService.class);
 
-    private Users registerNewUser(OAuth2UserRequest oAuth2UserRequest, OAuth2UserInfo oAuth2UserInfo){
+
+    private Users registerUser(OAuth2UserRequest oAuth2UserRequest, OAuth2UserInfo oAuth2UserInfo) {
         Users users = new Users();
         String userId = "USR" + String.valueOf(System.currentTimeMillis());
         users.setUserId(userId);
@@ -33,6 +38,7 @@ public class CustomOAuth2UserService extends DefaultOAuth2UserService {
         users.setProviderId(oAuth2UserInfo.getId());
         users.setFirstName(oAuth2UserInfo.getFirstName());
         users.setLastName(oAuth2UserInfo.getLastName());
+        users.setFullName(oAuth2UserInfo.getName());
         users.setEmail(oAuth2UserInfo.getEmail());
         users.setImageUrl(oAuth2UserInfo.getImageUrl());
         users.setCreateDate(new Date());
@@ -54,16 +60,31 @@ public class CustomOAuth2UserService extends DefaultOAuth2UserService {
 //        // given format
 //        System.out.println(simple.format(result));
 
-        return userMapper.saveInfoBySocial(users);
-
-
+        try {
+            int result = userMapper.saveInfoBySocial(users);
+            if (result > 0) {
+                return users;
+            }
+        } catch (Exception e) {
+            LOGGER.error(e.getMessage());
+        }
+        return null;
     }
 
 
-    private Users updateExistUser(Users users, OAuth2UserInfo oAuth2UserInfo){
-        users.setFirstName(oAuth2UserInfo.getName());
+    private Users updateExistUser(Users users, OAuth2UserInfo oAuth2UserInfo) {
+        users.setFirstName(oAuth2UserInfo.getFirstName());
+        users.setLastName(oAuth2UserInfo.getLastName());
+        users.setFullName(oAuth2UserInfo.getName());
         users.setImageUrl(oAuth2UserInfo.getImageUrl());
-        return userMapper.updateExistingUser(users);
+
+        try {
+            int result = userMapper.updateExistingUser(users);
+            if(result > 0) return users;
+        }catch (Exception e){
+            LOGGER.error(e.getMessage());
+        }
+        return null;
     }
 
 
@@ -77,34 +98,37 @@ public class CustomOAuth2UserService extends DefaultOAuth2UserService {
     public OAuth2User loadUser(OAuth2UserRequest userRequest) throws OAuth2AuthenticationException {
         OAuth2User oAuth2User = super.loadUser(userRequest);
 
-        try{
-            return processOAuth2User(userRequest,oAuth2User);
-        }catch(Exception ex){
+        try {
+            return processOAuth2User(userRequest, oAuth2User);
+        }
+        catch (AuthenticationException ex) {
+            throw ex;
+        }catch (Exception ex) {
             // Throwing an instance of AuthenticationException will trigger the OAuth2AuthenticationFailureHandler
             throw new InternalAuthenticationServiceException(ex.getMessage(), ex.getCause());
         }
     }
 
-    private OAuth2User processOAuth2User(OAuth2UserRequest oAuth2UserRequest, OAuth2User oAuth2User){
-        OAuth2UserInfo oAuth2UserInfo = OAuth2UserInfoFactory.getOAuth2UserInfo(oAuth2UserRequest.getClientRegistration().getRegistrationId(),oAuth2User.getAttributes());
-        if(StringUtils.isEmpty(oAuth2UserInfo.getEmail())){
+    private OAuth2User processOAuth2User(OAuth2UserRequest oAuth2UserRequest, OAuth2User oAuth2User) {
+        OAuth2UserInfo oAuth2UserInfo = OAuth2UserInfoFactory.getOAuth2UserInfo(oAuth2UserRequest.getClientRegistration().getRegistrationId(), oAuth2User.getAttributes());
+        if (StringUtils.isEmpty(oAuth2UserInfo.getEmail())) {
             throw new OAuth2AuthenticationProcessingException("Email not found from OAuth2 provider");
         }
 
         Users users = userMapper.findByEmail(oAuth2UserInfo.getEmail());
 
-        if(users != null){
-            if(!users.getProvider().equals(AuthProvider.valueOf(oAuth2UserRequest.getClientRegistration().getRegistrationId()))){
+        if (users != null) {
+            if (!users.getProvider().equals(AuthProvider.valueOf(oAuth2UserRequest.getClientRegistration().getRegistrationId()))) {
                 throw new OAuth2AuthenticationProcessingException("Looks like you're signed up with " +
                         users.getProvider() + " account. Please use your " + users.getProvider() +
                         " account to login.");
             }
-            users = updateExistUser(users,oAuth2UserInfo);
-        }else{
-            users = registerNewUser(oAuth2UserRequest, oAuth2UserInfo);
+            users = updateExistUser(users, oAuth2UserInfo);
+        } else {
+            users = registerUser(oAuth2UserRequest, oAuth2UserInfo);
         }
 
-        return JwtUser.create(users,oAuth2User.getAttributes());
+        return JwtUser.create(users, oAuth2User.getAttributes());
     }
 
 }

@@ -10,11 +10,11 @@ import org.springframework.stereotype.Repository;
 public interface UserMapper {
     Users findByEmail(@Param("email") String email);
 
-    Users registerNewUser(Users users);
+    int registerNewUser(Users users);
 
-    Users saveInfoBySocial(Users users);
+    int saveInfoBySocial(Users users);
 
 //    Users checkUser(@Param("username") String username);
 
-    Users updateExistingUser(Users users);
+    int updateExistingUser(Users users);
 }
