@@ -13,8 +13,8 @@ import java.util.Set;
 @Data
 @NoArgsConstructor
 public class Users extends GeneralInfo {
+    private Long id;
     private String userId;
-    private String userName;
     private String password;
     private String firstName;
     private String lastName;
@@ -27,6 +27,7 @@ public class Users extends GeneralInfo {
     private Date updateDate;
     private String providerId;
     private String imageUrl;
+    private int roleId;
 
     @NotNull
     private AuthProvider provider;

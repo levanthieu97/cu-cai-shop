@@ -14,7 +14,6 @@ public abstract class OAuth2UserInfo {
         return attributes;
     }
 
-    public abstract String getUserName();
 
     public abstract String getId();
 
@@ -24,5 +23,8 @@ public abstract class OAuth2UserInfo {
 
     public abstract String getImageUrl();
 
-    public abstract int getGender();
+    public abstract String getLastName();
+
+    public abstract String getFirstName();
+
 }

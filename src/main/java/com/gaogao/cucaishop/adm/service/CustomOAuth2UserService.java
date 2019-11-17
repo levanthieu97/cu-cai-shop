@@ -16,7 +16,7 @@ import org.springframework.security.oauth2.core.user.OAuth2User;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 
-import java.util.Optional;
+import java.util.Date;
 
 @Service
 public class CustomOAuth2UserService extends DefaultOAuth2UserService {
@@ -27,20 +27,41 @@ public class CustomOAuth2UserService extends DefaultOAuth2UserService {
 
     private Users registerNewUser(OAuth2UserRequest oAuth2UserRequest, OAuth2UserInfo oAuth2UserInfo){
         Users users = new Users();
-
+        String userId = "USR" + String.valueOf(System.currentTimeMillis());
+        users.setUserId(userId);
         users.setProvider(AuthProvider.valueOf(oAuth2UserRequest.getClientRegistration().getRegistrationId()));
-        users.setUserName(oAuth2UserInfo.getUserName());
         users.setProviderId(oAuth2UserInfo.getId());
-        users.setFullName(oAuth2UserInfo.getName());
+        users.setFirstName(oAuth2UserInfo.getFirstName());
+        users.setLastName(oAuth2UserInfo.getLastName());
         users.setEmail(oAuth2UserInfo.getEmail());
         users.setImageUrl(oAuth2UserInfo.getImageUrl());
+        users.setCreateDate(new Date());
+        users.setRoleId(1);
+        users.setProvider(AuthProvider.valueOf(oAuth2UserRequest.getClientRegistration().getRegistrationId()));
 
-        return userMapper.registerNewUser(users);
+//
+//        // milliseconds
+//        long miliSec = 1573809200568L;
+//
+//        // Creating date format
+//        DateFormat simple = new SimpleDateFormat("dd MMM yyyy HH:mm:ss:SSS Z");
+//
+//        // Creating date from milliseconds
+//        // using Date() constructor
+//        Date result = new Date(miliSec);
+//
+//        // Formatting Date according to the
+//        // given format
+//        System.out.println(simple.format(result));
+
+        return userMapper.saveInfoBySocial(users);
+
+
     }
 
 
     private Users updateExistUser(Users users, OAuth2UserInfo oAuth2UserInfo){
-        users.setFullName(oAuth2UserInfo.getName());
+        users.setFirstName(oAuth2UserInfo.getName());
         users.setImageUrl(oAuth2UserInfo.getImageUrl());
         return userMapper.updateExistingUser(users);
     }
@@ -66,15 +87,13 @@ public class CustomOAuth2UserService extends DefaultOAuth2UserService {
 
     private OAuth2User processOAuth2User(OAuth2UserRequest oAuth2UserRequest, OAuth2User oAuth2User){
         OAuth2UserInfo oAuth2UserInfo = OAuth2UserInfoFactory.getOAuth2UserInfo(oAuth2UserRequest.getClientRegistration().getRegistrationId(),oAuth2User.getAttributes());
-        if(StringUtils.isEmpty(oAuth2UserInfo.getUserName())){
-            throw new OAuth2AuthenticationProcessingException("Username not found from OAuth2 provider");
+        if(StringUtils.isEmpty(oAuth2UserInfo.getEmail())){
+            throw new OAuth2AuthenticationProcessingException("Email not found from OAuth2 provider");
         }
 
-        Optional<Users> usersOptional = userMapper.findByUserName(oAuth2UserInfo.getUserName());
+        Users users = userMapper.findByEmail(oAuth2UserInfo.getEmail());
 
-        Users users;
-        if(usersOptional.isPresent()){
-            users = usersOptional.get();
+        if(users != null){
             if(!users.getProvider().equals(AuthProvider.valueOf(oAuth2UserRequest.getClientRegistration().getRegistrationId()))){
                 throw new OAuth2AuthenticationProcessingException("Looks like you're signed up with " +
                         users.getProvider() + " account. Please use your " + users.getProvider() +

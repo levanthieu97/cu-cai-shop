@@ -15,9 +15,9 @@ import java.util.stream.Collectors;
 
 @Data
 @NoArgsConstructor
-public class JwtUser implements OAuth2User,UserDetails{
+public class JwtUser implements OAuth2User, UserDetails{
 
-    private String userId;
+    private Long id;
 
     private String username;
 
@@ -25,7 +25,7 @@ public class JwtUser implements OAuth2User,UserDetails{
 
     private String email;
 
-    private String fullname;
+    private String name;
 
     private String phone;
 
@@ -33,12 +33,11 @@ public class JwtUser implements OAuth2User,UserDetails{
 
     private Map<String, Object> attributes;
 
-    public JwtUser(String userId, String username, String password, String email, String phone, Collection<? extends GrantedAuthority> authorities) {
-        this.userId = userId;
-        this.username = username;
-        this.password = password;
+
+    public JwtUser(Long id,String email, String password, Collection<? extends GrantedAuthority> authorities) {
+        this.id = id;
         this.email = email;
-        this.phone = phone;
+        this.password = password;
         this.authorities = authorities;
     }
 
@@ -46,11 +45,9 @@ public class JwtUser implements OAuth2User,UserDetails{
         List<GrantedAuthority> authorities = users.getRoles().stream().map(role ->
                 new SimpleGrantedAuthority(role.getRoleName().name())).collect(Collectors.toList());
         return new JwtUser(
-                users.getUserId(),
-                users.getUserName(),
-                users.getPassword(),
+                users.getId(),
                 users.getEmail(),
-                users.getPhone(),
+                users.getPassword(),
                 authorities
         );
     }
@@ -103,6 +100,6 @@ public class JwtUser implements OAuth2User,UserDetails{
 
     @Override
     public String getName() {
-        return fullname;
+        return name;
     }
 }

@@ -23,9 +23,13 @@ public class MyUserDetailsService implements UserDetailsService {
 
 
     @Override
-    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        Users users = userMapper.findByUserName(username).orElseThrow(
-                ()-> new UsernameNotFoundException("User not found with username: " + username));
-        return JwtUser.create(users);
+    public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
+        try {
+            Users users = userMapper.findByEmail(email);
+            return JwtUser.create(users);
+        } catch (Exception e) {
+            LOGGER.error("User not found", e);
+            throw new UsernameNotFoundException("User not found with username: " + email);
+        }
     }
 }
