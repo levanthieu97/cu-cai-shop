@@ -7,6 +7,7 @@
         <result column="password" property="password"/>
         <result column="first_name" property="firstName"/>
         <result column="last_name" property="lastName"/>
+        <result column="full_name" property="fullName"/>
         <result column="gender" property="gender"/>
         <result column="email" property="email"/>
         <result column="phone" property="phone"/>
@@ -17,6 +18,7 @@
         <result column="image_url" property="imageUrl"/>
         <result column="provider_id" property="providerId"/>
         <result column="auth_provider" property="provider"/>
+        <result column="id" property="id"/>
         <collection property="roles" ofType="com.gaogao.cucaishop.home.models.Roles">
             <id column="role_id" property="roleId"/>
             <result column="role_name" property="roleName"/>
@@ -36,12 +38,15 @@
     </insert>
 
     <insert id="saveInfoBySocial" parameterType="map" useGeneratedKeys="true" keyProperty="userId" keyColumn="user_id">
-        insert into users(user_id,first_name,last_name,email,provider_id,image_url,create_date,role_id,auth_provider)
-        values (#{userId},#{firstName},#{lastName},#{email},#{providerId},#{imageUrl},#{createDate},#{roleId},#{provider})
+        insert into users(user_id,first_name,last_name,full_name,email,provider_id,image_url,create_date,role_id,auth_provider)
+        values (#{userId},#{firstName},#{lastName},#{fullName},#{email},#{providerId},#{imageUrl},#{createDate},#{roleId},#{provider})
     </insert>
     
     <update id="updateExistingUser" parameterType="map">
-
+        update users
+        set first_name = #{firstName}, last_name = #{lastName}, full_name = #{fullName},
+        image_url = #{imageUrl}
+        where email = #{email}
     </update>
 
 

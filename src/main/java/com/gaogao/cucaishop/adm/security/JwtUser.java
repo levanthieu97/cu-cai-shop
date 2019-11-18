@@ -17,7 +17,7 @@ import java.util.stream.Collectors;
 @NoArgsConstructor
 public class JwtUser implements OAuth2User, UserDetails{
 
-    private Long id;
+    private String id;
 
     private String username;
 
@@ -34,9 +34,10 @@ public class JwtUser implements OAuth2User, UserDetails{
     private Map<String, Object> attributes;
 
 
-    public JwtUser(Long id,String email, String password, Collection<? extends GrantedAuthority> authorities) {
+    public JwtUser(String id,String email,String name, String password, Collection<? extends GrantedAuthority> authorities) {
         this.id = id;
         this.email = email;
+        this.name = name;
         this.password = password;
         this.authorities = authorities;
     }
@@ -45,8 +46,9 @@ public class JwtUser implements OAuth2User, UserDetails{
         List<GrantedAuthority> authorities = users.getRoles().stream().map(role ->
                 new SimpleGrantedAuthority(role.getRoleName().name())).collect(Collectors.toList());
         return new JwtUser(
-                users.getId(),
+                users.getProviderId(),
                 users.getEmail(),
+                users.getFullName(),
                 users.getPassword(),
                 authorities
         );
