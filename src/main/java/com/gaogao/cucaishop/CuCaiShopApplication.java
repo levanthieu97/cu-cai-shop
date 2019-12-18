@@ -9,6 +9,7 @@ import org.springframework.boot.context.properties.EnableConfigurationProperties
 @SpringBootApplication
 @MapperScan("com.gaogao.cucaishop.*.mappers")
 @EnableConfigurationProperties(AppProperties.class)
+//@EnableResourceServer
 public class CuCaiShopApplication {
 
     public static void main(String[] args) {

@@ -19,8 +19,6 @@ public class JwtUser implements OAuth2User, UserDetails{
 
     private String id;
 
-    private String username;
-
     private String password;
 
     private String email;
@@ -77,7 +75,7 @@ public class JwtUser implements OAuth2User, UserDetails{
 
     @Override
     public String getUsername() {
-        return username;
+        return email;
     }
 
     @Override
@@ -100,8 +98,14 @@ public class JwtUser implements OAuth2User, UserDetails{
         return true;
     }
 
+
+    public void setAttributes(Map<String, Object> attributes) {
+        this.attributes = attributes;
+    }
+
+
     @Override
     public String getName() {
-        return name;
+        return email;
     }
 }
