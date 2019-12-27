@@ -16,10 +16,12 @@ import org.springframework.web.filter.OncePerRequestFilter;
 import javax.servlet.FilterChain;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
+@WebFilter(urlPatterns="/api/*")
 public class JwtAuthenticationFilter extends OncePerRequestFilter {
 
     private static final Logger logger = LoggerFactory.getLogger(JwtAuthenticationFilter.class);
@@ -47,19 +49,17 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
             String jwt = request.getHeader(REQ_HEADER_AUTH);
             System.out.println(jwt);
 
-            if (StringUtils.hasText(jwt) && jwt.startsWith("Bearer ")) {
-                jwt = jwt.substring(7, jwt.length());
-                if (StringUtils.hasText(jwt) && tokenProvider.validateToken(jwt)) {
-                    String jwtUser = tokenProvider.getJwtUser(jwt);
-                    request.setAttribute(REQ_USR, jwtUser);
+            if (StringUtils.hasText(jwt) && tokenProvider.validateToken(jwt)) {
+                String jwtUser = tokenProvider.getJwtUser(jwt);
+                request.setAttribute(REQ_USR, jwtUser);
 
-                    UserDetails userDetails = userDetailsService.loadUserByUsername(jwtUser);
-                    UsernamePasswordAuthenticationToken authentication = new UsernamePasswordAuthenticationToken(userDetails, null, userDetails.getAuthorities());
-                    authentication.setDetails(new WebAuthenticationDetailsSource().buildDetails(request));
+                UserDetails userDetails = userDetailsService.loadUserByUsername(jwtUser);
+                UsernamePasswordAuthenticationToken authentication = new UsernamePasswordAuthenticationToken(userDetails, null, userDetails.getAuthorities());
+                authentication.setDetails(new WebAuthenticationDetailsSource().buildDetails(request));
 
-                    SecurityContextHolder.getContext().setAuthentication(authentication);
-                }
+                SecurityContextHolder.getContext().setAuthentication(authentication);
             }
+
         } catch (Exception ex) {
             logger.error("Could not set user authentication in security context", ex);
 

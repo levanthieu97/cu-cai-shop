@@ -32,7 +32,7 @@ public class CustomOAuth2UserService extends DefaultOAuth2UserService {
 
     private Users registerUser(OAuth2UserRequest oAuth2UserRequest, OAuth2UserInfo oAuth2UserInfo) {
         Users users = new Users();
-        String userId = "USR" + String.valueOf(System.currentTimeMillis());
+        String userId = "USR" + System.currentTimeMillis();
         users.setUserId(userId);
         users.setProvider(AuthProvider.valueOf(oAuth2UserRequest.getClientRegistration().getRegistrationId()));
         users.setProviderId(oAuth2UserInfo.getId());
@@ -62,7 +62,8 @@ public class CustomOAuth2UserService extends DefaultOAuth2UserService {
 
         try {
             int result = userMapper.saveInfoBySocial(users);
-            if (result > 0) {
+            int saveUserRole = userMapper.insertUserRole(1,userId);
+            if (result > 0 && saveUserRole > 0) {
                 return users;
             }
         } catch (Exception e) {

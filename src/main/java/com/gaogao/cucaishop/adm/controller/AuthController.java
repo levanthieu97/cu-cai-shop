@@ -2,20 +2,19 @@ package com.gaogao.cucaishop.adm.controller;
 
 import com.gaogao.cucaishop.adm.models.LoginRequest;
 import com.gaogao.cucaishop.adm.models.ResponseApi;
+import com.gaogao.cucaishop.adm.security.JwtAuthenticationFilter;
 import com.gaogao.cucaishop.adm.security.JwtTokenProvider;
 import com.gaogao.cucaishop.adm.security.JwtUser;
 import com.gaogao.cucaishop.adm.service.UserService;
 import com.gaogao.cucaishop.common.models.CommonStrings;
 import com.gaogao.cucaishop.common.models.ResponseObject;
 import com.gaogao.cucaishop.home.models.Users;
+import com.nimbusds.oauth2.sdk.auth.JWTAuthentication;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 
@@ -32,8 +31,8 @@ public class AuthController {
     @Autowired
     private UserService userService;
 
-    private Users validUser(String username, String password){
-        Users users = userService.loginUser(username);
+    private Users validUser(String email, String password){
+        Users users = userService.loginUser(email);
         if(users != null && jwtTokenProvider.validatePassword(password,users.getPassword())){
             return users;
         }
@@ -61,6 +60,7 @@ public class AuthController {
         }
         return responseObject;
     }
+
 
 
 

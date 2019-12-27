@@ -18,7 +18,6 @@
         <result column="image_url" property="imageUrl"/>
         <result column="provider_id" property="providerId"/>
         <result column="auth_provider" property="provider"/>
-        <result column="id" property="id"/>
         <collection property="roles" ofType="com.gaogao.cucaishop.home.models.Roles">
             <id column="role_id" property="roleId"/>
             <result column="role_name" property="roleName"/>
@@ -27,8 +26,9 @@
 
     <select id="findByEmail" resultMap="userResultMap" parameterType="string">
         select usr.user_id,usr.email,usr.last_name,usr.first_name,usr.auth_provider,usr.provider_id
-        from users usr
-        where usr.email = #{email}
+        from users usr,role_users ru, roles ro
+        where usr.email = #{email} and
+        usr.user_id = ru.user_id and ru.role_id = ro.role_id
     </select>
     
     <insert id="registerNewUser" useGeneratedKeys="true">
@@ -42,12 +42,21 @@
         values (#{userId},#{firstName},#{lastName},#{fullName},#{email},#{providerId},#{imageUrl},#{createDate},#{roleId},#{provider})
     </insert>
     
+    <insert id="insertUserRole" parameterType="map" useGeneratedKeys="true">
+        insert into role_users(role_id,user_id)
+        values (#{roleId},#{userId})
+    </insert>
+    
     <update id="updateExistingUser" parameterType="map">
         update users
         set first_name = #{firstName}, last_name = #{lastName}, full_name = #{fullName},
         image_url = #{imageUrl}
         where email = #{email}
     </update>
+
+    <resultMap id="roleResultMap" type="com.gaogao.cucaishop.home.models.Roles">
+        
+    </resultMap>
 
 
 </mapper>
