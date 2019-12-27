@@ -13,7 +13,7 @@ import java.util.Set;
 @Data
 @NoArgsConstructor
 public class Users extends GeneralInfo {
-    private Long id;
+
     private String userId;
     private String fullName;
     private String password;

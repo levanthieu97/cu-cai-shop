@@ -53,13 +53,13 @@ dependencies {
 
 
     // https://mvnrepository.com/artifact/org.springframework.security/spring-security-oauth2-jose
-    // compile group: 'org.springframework.security', name: 'spring-security-oauth2-jose', version: '5.1.6.RELEASE'
+    compile group: 'org.springframework.security', name: 'spring-security-oauth2-jose', version: '5.1.6.RELEASE'
 
     // Social
     // https://mvnrepository.com/artifact/org.springframework.social/spring-social-facebook
     // compile group: 'org.springframework.social', name: 'spring-social-facebook', version: '2.0.3.RELEASE'
     // https://mvnrepository.com/artifact/org.springframework.social/spring-social-google
-    // compile group: 'org.springframework.social', name: 'spring-social-google', version: '1.0.0.RELEASE'
+     compile group: 'org.springframework.social', name: 'spring-social-google', version: '1.0.0.RELEASE'
 
 
     compileOnly 'org.projectlombok:lombok:1.18.8'
