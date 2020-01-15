@@ -5,22 +5,28 @@ import com.gaogao.cucaishop.common.models.GeneralInfo;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
 @Data
-@NoArgsConstructor
 public class Users extends GeneralInfo {
 
     private String userId;
+
+    @NotBlank
+    private String email;
+
+    @NotBlank
     private String fullName;
+
+    @NotBlank
     private String password;
     private String firstName;
     private String lastName;
     private int gender;
-    private String email;
     private String phone;
     private char haveShop;
     private char isActive;
@@ -28,10 +34,22 @@ public class Users extends GeneralInfo {
     private Date updateDate;
     private String providerId;
     private String imageUrl;
-    private int roleId;
+    private String roleId;
 
-    @NotNull
     private AuthProvider provider;
+    private Roles roles;
 
-    private Set<Roles> roles = new HashSet<>();
+    public Users(@NotBlank String email, @NotBlank String fullName, @NotBlank String password, AuthProvider provider) {
+        this.userId = "USR" + System.currentTimeMillis();
+        this.email = email;
+        this.fullName = fullName;
+        this.password = password;
+        this.provider = provider;
+    }
+
+    public Users(){
+        this.userId = "USR" + System.currentTimeMillis();
+    }
+
+    //    private Set<Roles> roles = new HashSet<>();
 }

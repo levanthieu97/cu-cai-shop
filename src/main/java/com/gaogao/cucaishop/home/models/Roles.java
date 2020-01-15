@@ -9,4 +9,8 @@ import lombok.NoArgsConstructor;
 public class Roles extends GeneralInfo {
     private String roleId;
     private RoleName roleName;
+
+    public Roles(RoleName roleName) {
+        this.roleName = roleName;
+    }
 }
