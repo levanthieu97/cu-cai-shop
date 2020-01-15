@@ -18,23 +18,22 @@
         <result column="image_url" property="imageUrl"/>
         <result column="provider_id" property="providerId"/>
         <result column="auth_provider" property="provider"/>
-        <collection property="roles" ofType="com.gaogao.cucaishop.home.models.Roles">
+        <association property="roles" javaType="com.gaogao.cucaishop.home.models.Roles">
             <id column="role_id" property="roleId"/>
             <result column="role_name" property="roleName"/>
-        </collection>
+        </association>
     </resultMap>
 
     <select id="findByEmail" resultMap="userResultMap" parameterType="string">
-        select usr.user_id,usr.email,usr.last_name,usr.first_name,usr.auth_provider,usr.provider_id
+        select usr.user_id,usr.email,usr.last_name,usr.first_name,usr.auth_provider,usr.provider_id,ro.role_name
         from users usr,role_users ru, roles ro
         where usr.email = #{email} and
         usr.user_id = ru.user_id and ru.role_id = ro.role_id
     </select>
     
     <insert id="registerNewUser" useGeneratedKeys="true">
-        insert into users(user_id,email, password, first_name, last_name, gender, phone, is_active,
-        create_date, update_date, image_url, provider_id)
-        values (#{userId},#{email},#{password},#{firstName},#{lastName},#{gender},#{phone},#{createDate},#{updateDate},#{providerId})
+        insert into users(user_id,email, password,full_name,is_active,create_date,role_id)
+        values (#{userId},#{email},#{password},#{fullName},#{isActive},#{createDate},#{roleId})
     </insert>
 
     <insert id="saveInfoBySocial" parameterType="map" useGeneratedKeys="true" keyProperty="userId" keyColumn="user_id">
@@ -53,6 +52,10 @@
         image_url = #{imageUrl}
         where email = #{email}
     </update>
+
+    <select id="checkUser" resultMap="userResultMap" parameterType="string">
+        select email from users where email = #{email};
+    </select>
 
     <resultMap id="roleResultMap" type="com.gaogao.cucaishop.home.models.Roles">
         

@@ -10,4 +10,8 @@ public interface CommonStrings {
 
     String RESP_MSG_SERVER_ERROR = "Failure processing";
 
+    String ROLE_USER = "ROLE_USER_111";
+
+    String ROLE_ADMIN = "ROLE_ADMIN_999";
+
 }

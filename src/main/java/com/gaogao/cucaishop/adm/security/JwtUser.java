@@ -9,9 +9,9 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.oauth2.core.user.OAuth2User;
 
 import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 import java.util.Map;
-import java.util.stream.Collectors;
 
 @Data
 @NoArgsConstructor
@@ -41,8 +41,7 @@ public class JwtUser implements OAuth2User, UserDetails{
     }
 
     public static JwtUser create(Users users){
-        List<GrantedAuthority> authorities = users.getRoles().stream().map(role ->
-                new SimpleGrantedAuthority(role.getRoleName().name())).collect(Collectors.toList());
+        List<GrantedAuthority> authorities = Collections.singletonList(new SimpleGrantedAuthority(users.getRoles().getRoleName().name()));
         return new JwtUser(
                 users.getProviderId(),
                 users.getEmail(),

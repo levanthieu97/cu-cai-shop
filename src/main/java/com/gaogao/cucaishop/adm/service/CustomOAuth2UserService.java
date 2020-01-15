@@ -6,6 +6,9 @@ import com.gaogao.cucaishop.adm.social.AuthProvider;
 import com.gaogao.cucaishop.adm.social.OAuth2AuthenticationProcessingException;
 import com.gaogao.cucaishop.adm.social.OAuth2UserInfo;
 import com.gaogao.cucaishop.adm.social.OAuth2UserInfoFactory;
+import com.gaogao.cucaishop.common.models.CommonStrings;
+import com.gaogao.cucaishop.home.models.RoleName;
+import com.gaogao.cucaishop.home.models.Roles;
 import com.gaogao.cucaishop.home.models.Users;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -32,8 +35,6 @@ public class CustomOAuth2UserService extends DefaultOAuth2UserService {
 
     private Users registerUser(OAuth2UserRequest oAuth2UserRequest, OAuth2UserInfo oAuth2UserInfo) {
         Users users = new Users();
-        String userId = "USR" + System.currentTimeMillis();
-        users.setUserId(userId);
         users.setProvider(AuthProvider.valueOf(oAuth2UserRequest.getClientRegistration().getRegistrationId()));
         users.setProviderId(oAuth2UserInfo.getId());
         users.setFirstName(oAuth2UserInfo.getFirstName());
@@ -42,9 +43,9 @@ public class CustomOAuth2UserService extends DefaultOAuth2UserService {
         users.setEmail(oAuth2UserInfo.getEmail());
         users.setImageUrl(oAuth2UserInfo.getImageUrl());
         users.setCreateDate(new Date());
-        users.setRoleId(1);
+        users.setRoleId(CommonStrings.ROLE_USER);
         users.setProvider(AuthProvider.valueOf(oAuth2UserRequest.getClientRegistration().getRegistrationId()));
-
+        users.setRoles(new Roles(RoleName.ROLE_USER));
 //
 //        // milliseconds
 //        long miliSec = 1573809200568L;
@@ -62,8 +63,7 @@ public class CustomOAuth2UserService extends DefaultOAuth2UserService {
 
         try {
             int result = userMapper.saveInfoBySocial(users);
-            int saveUserRole = userMapper.insertUserRole(1,userId);
-            if (result > 0 && saveUserRole > 0) {
+            if (result > 0) {
                 return users;
             }
         } catch (Exception e) {

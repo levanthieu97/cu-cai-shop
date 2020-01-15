@@ -19,4 +19,6 @@ public interface UserMapper {
     int updateExistingUser(Users users);
 
     int insertUserRole(@Param("roleId") int roleId, @Param("userId") String userId);
+
+    Users checkUser(@Param("email") String email);
 }
