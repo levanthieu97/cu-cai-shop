@@ -46,11 +46,11 @@ public class AuthController {
     public ResponseObject authenticateUser(@Valid @RequestBody LoginRequest loginRequest) {
         ResponseObject responseObject = new ResponseObject();
         try {
-            Users user = validUser(loginRequest.getUsername(), loginRequest.getPassword());
+            Users user = validUser(loginRequest.getEmail(), loginRequest.getPassword());
             if (user != null) {
                 ResponseApi responseApi = new ResponseApi();
                 responseApi.setAccount(user);
-                responseApi.setToken(jwtTokenProvider.generateToken((Authentication) JwtUser.create(user)));
+                responseApi.setToken(jwtTokenProvider.generateTokenLocal(JwtUser.create(user)));
                 Roles userRole = user.getRoles();
                 responseApi.setRole(userRole.getRoleName());
 

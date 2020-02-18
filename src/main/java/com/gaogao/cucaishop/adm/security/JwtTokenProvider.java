@@ -5,17 +5,25 @@ import io.jsonwebtoken.*;
 import org.joda.time.DateTime;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.crypto.bcrypt.BCrypt;
 import org.springframework.stereotype.Component;
 
+import java.math.BigInteger;
+import java.security.SecureRandom;
 import java.util.Date;
 
 @Component
 public class JwtTokenProvider {
     private static final Logger LOGGER = LoggerFactory.getLogger(JwtTokenProvider.class);
 
+    private static final String jwtSecret = new BigInteger(130, new SecureRandom()).toString(32);
+
     private AppProperties appProperties;
+
+    @Value("${jwt.expire.hours}")
+    private int jwtExpireHrs;
 
     public JwtTokenProvider(AppProperties appProperties) {
         this.appProperties = appProperties;
@@ -26,9 +34,21 @@ public class JwtTokenProvider {
         JwtUser jwtUser = (JwtUser) authentication.getPrincipal();
         return Jwts.builder()
                 .setSubject(jwtUser.getEmail())
+                .claim("name",jwtUser.getName())
                 .setIssuedAt(new Date())
                 .setExpiration(expireDate)
                 .signWith(SignatureAlgorithm.HS512, appProperties.getAuth().getTokenSecret())
+                .compact();
+    }
+
+    public String generateTokenLocal(JwtUser jwtUser){
+        Date expireDate = new DateTime().plusHours(jwtExpireHrs).toDate();
+        return Jwts.builder()
+                .setSubject(jwtUser.getEmail())
+
+                .setIssuedAt(new Date())
+                .setExpiration(expireDate)
+                .signWith(SignatureAlgorithm.HS512, jwtSecret)
                 .compact();
     }
 
