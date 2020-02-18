@@ -1,16 +1,15 @@
 package com.gaogao.cucaishop.home.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.gaogao.cucaishop.adm.social.AuthProvider;
 import com.gaogao.cucaishop.common.models.GeneralInfo;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
 import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
 import java.util.Date;
-import java.util.HashSet;
-import java.util.Set;
 
+
+@JsonIgnoreProperties({"user_id","role_id","password"})
 @Data
 public class Users extends GeneralInfo {
 

@@ -25,10 +25,10 @@
     </resultMap>
 
     <select id="findByEmail" resultMap="userResultMap" parameterType="string">
-        select usr.user_id,usr.email,usr.last_name,usr.first_name,usr.auth_provider,usr.provider_id,ro.role_name
-        from users usr,role_users ru, roles ro
+        select usr.user_id,usr.email,usr.password,usr.last_name,usr.first_name,usr.auth_provider,usr.provider_id,ro.role_name
+        from users usr, roles ro
         where usr.email = #{email} and
-        usr.user_id = ru.user_id and ru.role_id = ro.role_id
+        usr.role_id = ro.role_id
     </select>
     
     <insert id="registerNewUser" useGeneratedKeys="true">
@@ -56,10 +56,6 @@
     <select id="checkUser" resultMap="userResultMap" parameterType="string">
         select email from users where email = #{email};
     </select>
-
-    <resultMap id="roleResultMap" type="com.gaogao.cucaishop.home.models.Roles">
-        
-    </resultMap>
 
 
 </mapper>

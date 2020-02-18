@@ -28,12 +28,19 @@ public class UserService {
     public Users loginUser(String email) {
         Users users = null;
         try {
-            users = userMapper.findByEmail(email);
+            if(email != null || email != ""){
+                users = userMapper.findByEmail(email);
+                if(users != null){
+                    return users;
+                }else{
+                    return null;
+                }
+            }
+            return users;
         } catch (Exception e) {
             LOGGER.error("Fail when call loginUser. ", e);
             throw new UsernameNotFoundException("User not found with username: " + email);
         }
-        return users;
     }
 
     @Transactional
