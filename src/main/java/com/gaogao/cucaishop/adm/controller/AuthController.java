@@ -12,7 +12,6 @@ import com.gaogao.cucaishop.home.models.Users;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -70,7 +69,7 @@ public class AuthController {
     }
 
     @PostMapping("/register")
-    public ResponseObject registerNewUser(@Valid @RequestBody Users users) {
+        public ResponseObject registerNewUser(@RequestBody Users users) {
         ResponseObject responseObject = new ResponseObject();
         try{
             if(userService.checkUserValid(users.getEmail()) != null){

@@ -25,7 +25,7 @@
     </resultMap>
 
     <select id="findByEmail" resultMap="userResultMap" parameterType="string">
-        select usr.user_id,usr.email,usr.password,usr.last_name,usr.first_name,usr.auth_provider,usr.provider_id,ro.role_name
+        select usr.user_id,usr.email,usr.password,usr.last_name,usr.first_name,usr.full_name,usr.auth_provider,usr.provider_id,ro.role_name
         from users usr, roles ro
         where usr.email = #{email} and
         usr.role_id = ro.role_id
